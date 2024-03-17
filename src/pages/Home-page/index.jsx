@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from"./homepage.module.css"
 import { NavLinks,NavBar } from "../../components/Nav1";
 import Footer from "../../components/footer";
@@ -6,7 +7,10 @@ const Home = ()=>{
     return <div>
         <NavLinks/>
         <NavBar/>
-        <div className={styles.heroBg}>
+        <div className={styles.heroBg}   data-aos="fade-up"
+           aos-easing="linear"
+           aos-duration="3000"
+           aos-delay="100" >
             <h1>Sustainable Waste <span>Solutions for Every </span><span>Environment</span></h1>
             <p>Expert Waste Management Services Tailored to Your Needs</p>
             <div className={styles.btns}>
@@ -15,7 +19,9 @@ const Home = ()=>{
             </div>
         </div>
         <div className={styles.wasteMgt}>
-           <div className={styles.wasteMgtText}>
+           <div className={styles.wasteMgtText}  data-aos="fade-right"
+                aos-delay="100"
+               aos-duration="3000">
                 <p className={styles.heading}>Waste Collection Service Provider You Can Trust!!</p>
                 <h4 className={styles.lead}>Leading the Way to a <span className={styles.green}> Greener </span>Future</h4>
                 <p className={styles.aboutWaste}>At Zero Waste, we're on a mission to revolutionize waste management
@@ -29,17 +35,25 @@ const Home = ()=>{
                     <Button variant='primary' size='medium'>More About Us</Button>
                 </div>
            </div>
-           <div className={styles.mgtImage}>
+           <div className={styles.mgtImage}data-aos="fade-left"
+               aos-delay="400"
+                aos-duration="2000"
+                >
             <img src="src\assets\images\Rectangle 6.png" alt="" srcset="" />
             <img className={styles.review} src="src\assets\images\Frame 23.png" alt="" srcset="" />
            </div>
         </div>
-        <div className={styles.solutions}>
-            <p className={styles.heading}> Safe, Trusted And Reliable Waste Collection Service</p>
-            <h3>Comprehensive Solutions for <span>Your Home and Business Needs</span></h3>
+        <div className={styles.solutions}  >
+                <p className={styles.heading} data-aos="fade-up"
+                    aos-delay="100"
+                     aos-duration="1000"> Safe, Trusted And Reliable Waste Collection Service</p>
+                <h3 className={styles.heading2} data-aos="fade-up"aos-delay="600"aos-duration="2000">Comprehensive Solutions for <span>Your Home and Business Needs</span></h3>
             <div className={styles.services}>
-                <div className={styles.blockOne}>
-                    <div className={styles.blockText}>
+                <div className={styles.blockOne} 
+                data-aos="zoom-in"
+                aos-delay="300"
+                 aos-duration="2000">
+                    <div className={styles.blockText}  >
                         <img src="src\assets\images\fa6-solid_trash-can.png" alt="" srcset="" />
                         <h6>Residential Waste And Recycling Services</h6>
                         <p>We recorgnize that choosing the right 
@@ -52,7 +66,9 @@ const Home = ()=>{
                         <img src="src\assets\images\Rectangle 14.png" alt="" srcset="" />
                     </div>
                 </div>
-                <div className={styles.blockOne}>
+                <div className={styles.blockOne} data-aos="zoom-in"
+                aos-delay="600"
+                 aos-duration="15000">
                     <div className={styles.blockText}>
                         <img src="src\assets\images\Vector (9).png" alt="" srcset="" />
                         <h6>Commercial Waste And Industrial Services</h6>
@@ -67,7 +83,9 @@ const Home = ()=>{
                         <img src="src\assets\images\Rectangle 15.png" alt="" srcset="" />
                     </div>
                 </div>
-                <div className={styles.blockOne}>
+                <div className={styles.blockOne} data-aos="zoom-in"
+                aos-delay="600"
+                 aos-duration="1000">
                     <div className={styles.blockText}>
                         <img src="src\assets\images\Vector (10).png" alt="" srcset="" />
                         <h6>Retail And Institutional Collection Service</h6>
@@ -84,42 +102,57 @@ const Home = ()=>{
             </div>
         </div>
         <div className={styles.testimonials}>
+            <p className={styles.heading}>Voices of Sustainability</p>
+            <h3>Testimonials on Waste<span> Management Excellence </span></h3>
             <div className={styles.cards}>
-                <div className={styles.cardOne}>
+                <div className={styles.cardOne}  data-aos="zoom-in-down"
+                aos-delay="200"
+                 aos-duration="8000">
                     <div className= {styles.cardImg}>
                       <img src='src\assets\images\Ellipse 7.png'/>
                     </div>
-                    <h4>ken</h4>
                     <p>Zero waste has been a life saver. I was 
                             able to get them to send out their staff 
                             to help with my waste pick up after my
                             wedding
                     </p>
+                    <h4>ken</h4>
+                    <p>manager</p>
                 </div>
-                <div className={styles.cardOne}>
+                <div className={styles.cardOne} data-aos="zoom-in-left"
+                aos-delay="200"
+                 aos-duration="8000">
                     <div className= {styles.cardImg}>
                       <img src='src\assets\images\Ellipse 7.png'/>
                     </div>
-                    <h4>ken</h4>
                     <p>Zero waste has been a life saver. I was 
                             able to get them to send out their staff 
                             to help with my waste pick up after my
                             wedding
                     </p>
+                    <h4>ken</h4>
+                    <p>manager</p>
                 </div>
-                <div className={styles.cardOne}>
+                <div className={styles.cardOne} data-aos="zoom-in-right"
+                aos-delay="200"
+                 aos-duration="8000">
                     <div className= {styles.cardImg}>
                       <img src='src\assets\images\Ellipse 7.png'/>
                     </div>
-                    <h4>chima</h4>
                     <p>Zero waste has never failed me. they are 
                         always fast whenever you schedule for a
                         pick up.
                     </p>
+                    <h4>chima</h4>
+                    <p>manager</p>
                 </div>
             </div>
        </div>
-       <Footer/>
+      <div data-aos="fade-down"
+                aos-easing="linear"
+                 aos-duration="1500">
+      <Footer/>
+      </div>
     </div>
 }
 export default Home;

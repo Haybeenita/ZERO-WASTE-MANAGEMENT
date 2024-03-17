@@ -1,3 +1,6 @@
+*{
+    /* border:1px solid red; */
+}
 .heroBg{
     background-image: url('src/assets/images/waste truck 2 1.png');
     background-repeat: no-repeat;
@@ -58,16 +61,18 @@
 }
 .review{
     position: absolute;
-    left:40%;
+    left:57%;
     top:60%;
-    width: 226px;
-    height: 211px;
+    width: 220px;
+    height: 180px;
 }
 .solutions{
     background-color: #dbe6da;
     height:594px ;
     padding: 68px 0 0 0;
+    /* border:1px solid red; */
 }
+
 .solutions .heading{
     text-align: center;
 }
@@ -117,31 +122,54 @@
 }
 .testimonials{
     height:604px;
-    background-color:#dbe6da;
-    margin-top:299px;
-   
+    background-color:#fff;
+    margin-top:13em;
+    /* border:1px solid yellow; */
+   /* display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center; */
+}
+.testimonials .heading{
+    text-align: center;
+}
+.testimonials h3{
+    font-size: 42px;
+    text-align: center;
+    /* padding-bottom: 55px; */
+}
+.testimonials h3 span{
+    display: block;
 }
 .cards{
     display:flex;
-    justify-content:space-between;
-    padding:124px 149px 0 147px;
+    justify-content:center;
+    align-items: center;
+    gap:70px;
+    padding:24px 0 0 0;
 }
 .cardOne{
-    height:480px;
-    background-color:#fff;
+    /* height:438px; */
+    background-color:#DBE6DA;
     width:361px;
     display:flex;
     flex-direction:column;
     align-items:center;
+    padding:0 39px 120px 39px;
+    /* justify-content: center; */
 }
 .cardImg{
-    padding:35px 116px 76px 116px;
+    padding-top: 35px;
 }
 .cardOne h4{
     color:#133B10;
     font-size:18px;
+    padding-top: 23px;
 }
 .cardOne p{
-    padding:27px 39px 168px 39px;
+    /* padding:27px 39px 168px 39px; */
     font-weight:600;
+    font-size: 15px;
+    width:283px;
+    text-align: center;
 }

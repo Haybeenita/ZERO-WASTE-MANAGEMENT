@@ -5,6 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+   
 }
 .icon,.icon2{
     display:flex;
@@ -22,6 +23,7 @@
     display: flex;
     font-size: 14px;
     color:#fff;
+    cursor: default;
 }
 .socialMedia > * +*{
     padding-left: 16px;
@@ -32,10 +34,15 @@
 .navWrapper{
     max-width: 1463px ;
     margin: 0 auto;
+    padding:0 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100px;
+    position:sticky;
+    top:0;
+    background-color: #fff;
+    z-index: 999;
 }
 .logo{
     height: 100px;
@@ -44,6 +51,7 @@
 .logo img{
     height: 100%;
     width: 100%;
+    cursor: pointer;
 }
 .navLinks{
     display: flex;
@@ -52,6 +60,7 @@
     display: flex;
     color:#1E1E1E;
     font-size: 22px;
+    cursor:pointer;
 }
 .navLinks li +li{
     margin-left: 16px;
