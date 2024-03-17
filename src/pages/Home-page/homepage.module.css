@@ -1,0 +1,147 @@
+.heroBg{
+    background-image: url('src/assets/images/waste truck 2 1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 560px;
+    padding-left:96px ;
+    /* width:1543px; */
+}
+.heroBg span{
+    display: block;
+}
+.heroBg h1{
+    font-size: 48px;
+    color:#fff;
+    padding: 107px 0 0 ;
+}
+.heroBg p{
+    color:#fff;
+    padding-bottom: 28px;
+}
+.btns{
+    display: flex;
+}
+.btns > *+*{
+    margin-left: 22px;
+}
+.wasteMgt{
+    display: flex;
+    justify-content: space-between;
+}
+.wasteMgtText{
+    width: 615px;
+    padding: 58px 0 0 85px;
+}
+.heading{
+    color:#A74F0F;
+    font-size: 18px;
+    font-weight: bolder;
+    padding-bottom: 16px;
+}
+.lead{
+    font-size: 42px;
+    color:#000;
+    padding-bottom: 16px;
+}
+.green{
+    color:#0E5808;
+}
+.aboutWaste{
+    padding-bottom: 20px;
+}
+.MoreBtn{
+    padding-top: 16px;
+}
+.mgtImage{
+    margin: 58px 188px 86px 0;
+    position: relative;
+}
+.review{
+    position: absolute;
+    left:40%;
+    top:60%;
+    width: 226px;
+    height: 211px;
+}
+.solutions{
+    background-color: #dbe6da;
+    height:594px ;
+    padding: 68px 0 0 0;
+}
+.solutions .heading{
+    text-align: center;
+}
+.solutions h3{
+    font-size: 42px;
+    text-align: center;
+    padding-bottom: 55px;
+}
+.solutions h3 span{
+    display: block;
+}
+.services{
+    width: 1268px;
+    height:518px;
+    margin: 0  auto;
+    display: flex;
+    justify-content: space-between;
+}
+.blockOne{
+    /* height: 518px; */
+    width: 361px;
+    background-color: #fff;
+    margin-bottom:112px;
+    
+}
+.blockText{
+    /* width:294.9px; */
+    padding: 51.18px 36.09px 22.87px 29.9px;
+}
+.blockText h6{
+    padding: 16px 0;
+    font-size: 20px;
+    width: 229.94px;
+}
+.blockText p{
+    width: 294.9px;
+    font-size: 15px;
+}
+.blockImg{
+    height: 240px;
+    width: 361px;
+}
+.blockImg img{
+    width: 100%;
+    height: 100%;
+    margin-bottom:112px;
+}
+.testimonials{
+    height:604px;
+    background-color:#dbe6da;
+    margin-top:299px;
+   
+}
+.cards{
+    display:flex;
+    justify-content:space-between;
+    padding:124px 149px 0 147px;
+}
+.cardOne{
+    height:480px;
+    background-color:#fff;
+    width:361px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.cardImg{
+    padding:35px 116px 76px 116px;
+}
+.cardOne h4{
+    color:#133B10;
+    font-size:18px;
+}
+.cardOne p{
+    padding:27px 39px 168px 39px;
+    font-weight:600;
+}

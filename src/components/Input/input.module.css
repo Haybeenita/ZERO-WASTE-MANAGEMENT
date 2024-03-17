@@ -1,0 +1,12 @@
+input[data-size='small']{
+    width:415.55px;
+    height:46.22px;
+    padding:12.33px 190.76px 11.33px 50.53px;
+    font-size:18px;
+    color:#fff;
+    background-color:transparent;
+    border:2px solid #fff;
+}
+input::placeholder{
+    color:#fff;
+}
