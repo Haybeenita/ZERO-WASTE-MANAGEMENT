@@ -1,16 +1,16 @@
 .footer{
     background-color:#133B10;
-    height:842.28px;
-    padding-top:130.04px;
+    padding: 41px 78px 50px 51.29px ;
+    margin-top: 66px;
 }
 .footerNav{
-    width:1336.35px;
+    max-width:1336.35px;
     /* height:135.59px; */
     display:flex;
     align-items:center;
     justify-content:space-between;
     background-color:#000;
-    margin: 0 auto ;
+    margin: 0 104px ;
     color:#fff;
     padding:43.55px 102.18px  43.55px 25.78px ;
 }
@@ -38,19 +38,23 @@
     color:#fff;
     padding-bottom:59.76px;
 }
-.aboutUs{
-    margin-right:121.18px;
+.title2{
+    font-size:20px;
+    color:#fff;
 }
 .aboutUs p{
     font-size:17px;
     color:#fff;
     width:255.72px;
 }
+.aboutUs >*+*{
+    padding-bottom:29px;
+}
 .company{
    width:145.39px;
    color:#fff;
    font-size:17px;
-   margin-right:125.71px;
+   /* margin-right:125.71px; */
 }
 .company >*+*{
     padding-bottom:20px;
@@ -59,18 +63,22 @@
     width:191.79px;
     color:#fff;
     font-size:17px;
-    margin-right:371.82px
+    /* margin-right:371.82px */
 }
 .services >*+*{
     padding-bottom:20px;
 }
 .content{
     display:flex;
-    padding:115px 0px 148.72px 55.09px;
+    justify-content: space-between;
+    /* padding:115px 50px 0 50px; */
+    /* border:2px solid yellow; */
 }
 .contentsOne{
-    display:flex;
-    
+    display:flex; 
+}
+.contentsOne >*+*{
+    margin-left: 121px;
 }
 .contentTwo{
     width:225.8px;
@@ -84,7 +92,9 @@
 .contactUs{
     display:flex;
     align-items:center;
+    /* justify-content: center; */
 }
-.msg2{
-    margin-right:13.62px
+.contactUs span{
+    display: inline flex;
+    margin-right: 13px;
 }
