@@ -1,1 +1,1 @@
-Waste Management is an app solution to clean up Enugu.
+Waste Management is an app solution to clean up Enugu, Nigeria.
