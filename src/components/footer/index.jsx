@@ -9,7 +9,8 @@ const Footer =()=>{
                         <p>Sign Up For Industry Alerts, Deals,<span>News And Insights From Us.</span></p>
                     </div>
                     <div className={styles.btns}>
-                        <Input size='small'></Input>
+                        <Input size='small' padding='12.33px 190.76px 11.33px 50.53px'></Input>
+                        {/* <Input /> */}
                     <div className={styles.btn}> <Button size='xxsmall'>suscribe </Button></div>
                     </div>
                 </div>
@@ -34,6 +35,11 @@ const Footer =()=>{
                             <h6 className={styles.title}>location</h6> 
                                 <p>1578 Bisalla road, New Haven Enugu</p>
                             </div>
+                            {/* <div className={styles.example}>
+                                <label>phoneNumber
+                                <Input placeholder='+234' />
+                                </label>
+                            </div> */}
                     </div>
            </div>
          </div>

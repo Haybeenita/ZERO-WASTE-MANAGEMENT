@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Home from './pages/Home-page'
+import Input from './components/Input';
 import './App.css'
 function App() {
   useEffect(() => {

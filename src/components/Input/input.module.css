@@ -1,12 +1,31 @@
+.inputWrapper{
+    /* background-color: blue; */
+}
+input{
+    outline: none;
+    border:none;
+    border-radius: 10px;
+}
 input[data-size='small']{
     width:415.55px;
     height:46.22px;
-    padding:12.33px 190.76px 11.33px 50.53px;
     font-size:18px;
     color:#fff;
     background-color:transparent;
     border:2px solid #fff;
 }
+label{
+    display: block;
+    width:100%;
+    font-size: 20px;
+    font-family: inter;
+    margin-bottom: 5px;
+    text-transform:capitalize;
+}
 input::placeholder{
-    color:#fff;
+    color:#000;
+    font-size: 20px;
+}
+.input[data-fullwidth=true]{
+    width:100%;
 }
