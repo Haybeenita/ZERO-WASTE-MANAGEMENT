@@ -1,0 +1,102 @@
+.footer{
+    background-color:#133B10;
+    padding: 41px 78px 50px 51.29px ;
+    margin-top: 66px;
+}
+.footerNav{
+    max-width:1336.35px;
+    /* height:135.59px; */
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background-color:#000;
+    margin: 0 104px ;
+    color:#fff;
+    padding:43.55px 102.18px  43.55px 25.78px ;
+}
+.signup,.btns{
+    display:flex;
+    align-items:center;
+}
+.signup p{
+    font-size:20px;
+    margin-left:15px;
+}
+.signup p span{
+    display:block;
+}
+.msg{
+    color:#A74F0F;
+    border:1px solid #A74F0F;
+    background-color:#A74F0F;
+}
+.btns .btn{
+    margin-left:30.6px;
+}
+.title{
+    font-size:20px;
+    color:#fff;
+    padding-bottom:59.76px;
+}
+.title2{
+    font-size:20px;
+    color:#fff;
+}
+.aboutUs p{
+    font-size:17px;
+    color:#fff;
+    width:255.72px;
+}
+.aboutUs >*+*{
+    padding-bottom:29px;
+}
+.company{
+   width:145.39px;
+   color:#fff;
+   font-size:17px;
+   /* margin-right:125.71px; */
+}
+.company >*+*{
+    padding-bottom:20px;
+}
+.services{
+    width:191.79px;
+    color:#fff;
+    font-size:17px;
+    /* margin-right:371.82px */
+}
+.services >*+*{
+    padding-bottom:20px;
+    
+    
+}
+.content{
+    display:flex;
+    justify-content: space-between;
+    /* padding:115px 50px 0 50px; */
+    /* border:2px solid yellow; */
+}
+.contentsOne{
+    display:flex; 
+}
+.contentsOne >*+*{
+    margin-left: 121px;
+}
+.contentTwo{
+    width:225.8px;
+    height:63.31px;
+    color:#fff;
+    font-size:17px;
+}
+.contentTwo > *+*{
+    padding-bottom:22px;
+}
+.contactUs{
+    display:flex;
+    align-items:center;
+    /* justify-content: center; */
+}
+.contactUs span{
+    display: inline flex;
+    margin-right: 13px;
+}
