@@ -1,27 +1,40 @@
-.btn{
+/* .btn{
    border: none;
    outline: none;
    cursor: pointer;
    font-size: 18px;
    font-weight: bold;
 
-}
+} */
 .btn[data-variant="primary"]{
-    background-color: #0E5808;
+    background-color: #51AD44;
     color: #fff;
 }
-.btn[data-size='small']{
-    width:198.22px;
-    height:55.27px;
-    padding: 15.63px 20.89px;
+.btn[data-size="large"]{
+    width:18rem;
+    height:3rem;
+    padding: 13px 20.89px;
+    border-radius: 10px;
+    text-align: center;
+
 }
-.btn[data-size='xsmall']{
+
+.btn[data-size='medium']{
+    width: 12.5rem;
+    height: 3.454rem;
+    padding: 15.63px 20.89px;
+    border-radius: 10px;
+}
+
+
+.btn[data-size='small']{
     width: 177px;
     height: 64px;
     padding: 21px 18px ;
     color:#fff;
     background-color: transparent;
     border: 3px solid #D9D9D9;
+    hover: white
 }
 .btn[data-variant='secondary']{
     width: 232px;
@@ -30,7 +43,7 @@
     background-color: #D9D9D9;
     color:#1E1E1E;
 }
-.btn[data-size='medium']{
+.btn[data-size='xsmall']{
     width: 230.97px;
     height: 63.68px;
     padding:20.54px 53.56px  ;
@@ -43,4 +56,15 @@
     padding: 12.05px 33.43px 11.05px 21.46px;
     background-color: #fff;
     color:#000;
+    border-radius: 10px;
+}
+
+.btn[data-size='xxxsmall']{
+    width: 134.87px;
+    height: 3.454rem;
+    padding: 11px 33.43px 11px 21.46px;
+    background-color:#51AD44;
+    border-radius:10px ;
+    margin-right: ;
+
 }

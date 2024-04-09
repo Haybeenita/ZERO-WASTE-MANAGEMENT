@@ -1,28 +1,26 @@
-import React, { useEffect } from 'react';
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-import Home from './pages/Home-page'
-import Input from './components/Input';
-import './App.css'
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "./App.css";
+import { RouterProviderApp } from "./AppRouter";
 function App() {
   useEffect(() => {
     AOS.init({
       // Global settings
-      once:false
+      once: false,
     });
   }, []);
   return (
     <>
-     <div className='inner-width'>
-      <Home/>
-     </div>
+      <div className="w-full bg-white">
+        <div className="w-full m-auto">
+          {/* <Home/>
+      <Register/> */}
+          <RouterProviderApp />
+        </div>
+      </div>
     </>
-  )
+  );
 }
 
-export default App
-
-
-
+export default App;

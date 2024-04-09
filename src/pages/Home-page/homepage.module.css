@@ -2,7 +2,7 @@
     /* border:1px solid red; */
 }
 .heroBg{
-    background-image: url('src/assets/images/waste truck 2 1.png');
+    background-image:url('../../../src/assets/images/animation1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 560px;
@@ -58,13 +58,17 @@
 .mgtImage{
     margin: 58px 188px 86px 0;
     position: relative;
+    
 }
 .review{
     position: absolute;
     left:57%;
     top:60%;
-    width: 220px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    
+
 }
 .solutions{
     background-color: #dbe6da;
@@ -96,6 +100,8 @@
     width: 361px;
     background-color: #fff;
     margin-bottom:112px;
+    border-radius: 10px;
+
     
 }
 .blockText{
@@ -114,11 +120,18 @@
 .blockImg{
     height: 240px;
     width: 361px;
+    
+
 }
 .blockImg img{
     width: 100%;
     height: 100%;
     margin-bottom:112px;
+    border-radius: 0px 0px 10px 10px;
+    
+
+
+
 }
 .testimonials{
     height:604px;
@@ -147,6 +160,7 @@
     align-items: center;
     gap:70px;
     padding:24px 0 0 0;
+    
 }
 .cardOne{
     /* height:438px; */
@@ -160,11 +174,14 @@
 }
 .cardImg{
     padding-top: 35px;
+
+    
 }
 .cardOne h4{
     color:#133B10;
     font-size:18px;
     padding-top: 23px;
+
 }
 .cardOne p{
     /* padding:27px 39px 168px 39px; */
@@ -172,4 +189,7 @@
     font-size: 15px;
     width:283px;
     text-align: center;
+    border-radius: 10px;
+    
+
 }

@@ -1,5 +1,5 @@
 .container{
-    background-color: #0E5808;
+    background-color: #51AD44;
     height:51px;
     padding:  0 32px;
     display: flex;
@@ -32,29 +32,29 @@
     padding-left: 16px;
 }
 .navWrapper{
-    max-width: 1463px ;
     margin: 0 auto;
     padding:0 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
+    height: 95px;
     position:sticky;
     top:0;
     background-color: #fff;
     z-index: 999;
 }
-.logo{
+/* .logo{
     height: 100px;
     width: 92.16px;
-}
-.logo img{
+} */
+/* .logo img{
     height: 100%;
     width: 100%;
     cursor: pointer;
-}
+} */
 .navLinks{
     display: flex;
+    align-items: center;
 }
 .navLinks li{
     display: flex;

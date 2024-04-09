@@ -11,7 +11,7 @@ const Footer =()=>{
                     <div className={styles.btns}>
                         <Input size='small' padding='12.33px 190.76px 11.33px 50.53px'></Input>
                         {/* <Input /> */}
-                    <div className={styles.btn}> <Button size='xxsmall'>suscribe </Button></div>
+                    <div className={styles.btn}> <Button size='xxsmall'>subscribe </Button></div>
                     </div>
                 </div>
                 <div className={styles.footer}>
