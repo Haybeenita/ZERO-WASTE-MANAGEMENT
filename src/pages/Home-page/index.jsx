@@ -46,7 +46,7 @@ const Home = () => {
             institutional, and commercial clients.
           </p>
           <p></p>
-          <p>
+          <p className="text-[#212122]">
             Our team of experts is dedicated to minimizing waste, maximizing
             recycling, and promoting eco-friendly practices. Through innovative
             technologies and community outreach, we're committed to making a
@@ -128,7 +128,7 @@ const Home = () => {
               <p>
                 We offer commercial customers reliable and regular collection of
                 trash and organic materials on a scheduled or call in basics,
-                with a safe & unique level of service.
+                with a safe & unique level of services to maintain a clean and healthy environment.
               </p>
             </div>
             <div className={styles.blockImg}>
@@ -158,7 +158,7 @@ const Home = () => {
       </div>
       <div className={styles.testimonials}>
         <p className={styles.heading}>Voices of Sustainability</p>
-        <h3>
+        <h3 className="text-[#212122] mb-[3rem]">
           Testimonials on Waste<span> Management Excellence </span>
         </h3>
         <div className={styles.cards}>
@@ -168,15 +168,15 @@ const Home = () => {
             aos-delay="200"
             aos-duration="8000"
           >
-            <div className={styles.cardImg}>
-              <img src="src\assets\images\Ellipse 7.png" />
+            <div className="rounded-full w-[6rem] h-[6rem] bg-blend-transparent mb-[0.5rem]">
+              <img src="/testimonial2.png" className="rounded-full pt-[2rem]"/>
             </div>
-            <p>
+            <p className="mt-[3rem] text-[#212122]">
               Zero waste has been a life saver. I was able to get them to send
               out their staff to help with my waste pick up after my wedding
             </p>
-            <h4>ken</h4>
-            <p>manager</p>
+            <h4 className="text-[#212122] font-medium mt-[2rem]">ken</h4>
+            <p className="text-[#212122] mb-[3rem]">MANAGER</p>
           </div>
           <div
             className={styles.cardOne}
@@ -184,15 +184,15 @@ const Home = () => {
             aos-delay="200"
             aos-duration="8000"
           >
-            <div className={styles.cardImg}>
-              <img src="src\assets\images\Ellipse 7.png" />
+            <div className= "rounded-full w-[6rem] h-[6rem] mb-[0.5rem]">
+              <img src="testimonial1.png" className="pt-[2rem]"/>
             </div>
-            <p>
+            <p className="mt-[3rem] text-[#212122]">
               Zero waste has been a life saver. I was able to get them to send
               out their staff to help with my waste pick up after my wedding
             </p>
-            <h4>ken</h4>
-            <p>manager</p>
+            <h4 className="text-[#212122] font-medium mt-[2rem]">Chris</h4>
+            <p className="text-[#212122] mb-[3rem]">USER</p>
           </div>
           <div
             className={styles.cardOne}
@@ -200,19 +200,19 @@ const Home = () => {
             aos-delay="200"
             aos-duration="8000"
           >
-            <div className={styles.cardImg}>
-              <img src="src\assets\images\Ellipse 7.png" />
+            <div className="rounded-full w-[7rem] h-[7rem] mb-[0.5rem]">
+              <img src="/testimonial3.png" className="pt-[2rem]"/>
             </div>
-            <p>
+            <p className="mt-[3rem] text-[#212122]">
               Zero waste has never failed me. they are always fast whenever you
               schedule for a pick up.
             </p>
-            <h4>chima</h4>
-            <p>manager</p>
+            <h4 className="text-[#212122] font-medium mt-[2rem]">Angela</h4>
+            <p className="text-[#212122] mb-[3.5rem]">manager</p>
           </div>
         </div>
       </div>
-      <div data-aos="fade-down" aos-easing="linear" aos-duration="1500">
+      <div data-aos="fade-down" aos-easing="linear" aos-duration="1500" className="mt-[5rem]">
         <Footer />
       </div>
     </div>

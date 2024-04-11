@@ -1,12 +1,28 @@
-.container{
+.container {
     background-color: #51AD44;
-    height:51px;
-    padding:  0 32px;
+    height: 51px;
+    padding: 0 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-   
+    /* animation: slideRight 20s linear infinite; */
+    overflow: hidden !important;
 }
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* .slide-nav{
+    background-color:#51AD44 ;
+    animation: slideRight 20s linear infinite;
+    overflow: hidden !important;
+} */
 .icon,.icon2{
     display:flex;
     align-items:center;
@@ -55,16 +71,18 @@
 .navLinks{
     display: flex;
     align-items: center;
+    gap: 3rem;
 }
 .navLinks li{
     display: flex;
     color:#1E1E1E;
     font-size: 22px;
     cursor:pointer;
+
 }
 .navLinks li +li{
     margin-left: 16px;
 }
 .home{
-    color:!important #133B10;
+    color: #133B10;
 }

@@ -3,6 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "./App.css";
 import { RouterProviderApp } from "./AppRouter";
+import AuthProvider from "./Providers";
 function App() {
   useEffect(() => {
     AOS.init({
@@ -16,7 +17,9 @@ function App() {
         <div className="w-full m-auto">
           {/* <Home/>
       <Register/> */}
+      <AuthProvider>
           <RouterProviderApp />
+      </AuthProvider>
         </div>
       </div>
     </>

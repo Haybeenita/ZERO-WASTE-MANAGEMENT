@@ -11,14 +11,14 @@ const Footer =()=>{
                     <div className={styles.btns}>
                         <Input size='small' padding='12.33px 190.76px 11.33px 50.53px'></Input>
                         {/* <Input /> */}
-                    <div className={styles.btn}> <Button size='xxsmall'>subscribe </Button></div>
+                    <div className={styles.btn}> <Button size='xxsmall'>Subscribe </Button></div>
                     </div>
                 </div>
                 <div className={styles.footer}>
                     <div className={styles.content}>
                         <div className={styles.contentsOne}>
                             <div className={styles.aboutUs}>
-                                <img src="src\assets\images\zero_waste_logo_1-removebg-preview 2.png" alt="" srcset="" />
+                                <img src="/zerowastelogo2.svg" alt="" className="w-16 h-16" />
                                 <h6 className={styles.title2}>zero waste</h6>
                                 <p className={styles.contactUs}> <span><img className={styles.msg2} src='src\assets\images\Vector (2).png' /></span>zerowaste@gmail.com</p>
                                 <p className={styles.contactUs}> <span><img className={styles.msg2} src='src\assets\images\Vector (3).png' /></span>234816545620</p>

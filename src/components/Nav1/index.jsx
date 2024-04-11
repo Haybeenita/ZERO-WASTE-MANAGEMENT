@@ -1,13 +1,14 @@
 import styles from "./nav.module.css";
 import Button from "../Buttons";
+import { Link } from "react-router-dom";
 export const NavLinks = () => {
   return (
-    <div>
+    <div className="bg-[#51AD44] w-full ">
       <div className={styles.container}>
         <div className={styles.address}>
           <p className={styles.icon}>
             <span>
-              <img src="src\assets\images\location.png" className=""  />
+              <img  src="src\assets\images\location.png" className="object-fit"  />
             </span>
             1578 Bisalla road, New Haven Enugu
           </p>
@@ -48,8 +49,8 @@ export const NavBar = () => {
     <div className={styles.navWrapper}>
       <div className={styles.logo}>
         <div className="flex">
-        <img src="/zerowastelogo2.svg" alt=""/>
-        <p className="text-[#145D0D] font-semibold text-lg flex gap-1 items-center">ZERO <span className="text-[#51AD44]">WASTE</span></p>
+        <img src="/zerowastelogo2.svg" alt="" className="relative"/>
+        <p className="absolute mt-[2rem] ml-[5rem] text-[#145D0D] font-semibold text-lg flex gap-1 items-center">ZERO <span className="text-[#51AD44]">WASTE</span></p>
         </div>
 
       </div>
@@ -64,18 +65,16 @@ export const NavBar = () => {
 
       <div className="flex gap-4">
         <div>
-          <Button variant="primary" size="xxxsmall">
-            Sign in
+          <Button variant="primary" size="xxxsmall"><Link to='/Login'>Sign in</Link>
           </Button>
         </div>
         <div>
-          <Button variant="primary" size="xxxsmall">
-            Register
+          <Button variant="primary" size="xxxsmall"><Link to="/Register"> Register</Link>
           </Button>
         </div>
         <div>
-          <Button variant="primary" size="medium">
-            Request pickup
+          <Button variant="primary" size="medium"><Link to="/Bookus">Request pickup</Link>
+            
           </Button>
         </div>
       </div>
