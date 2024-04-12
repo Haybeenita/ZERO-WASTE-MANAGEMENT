@@ -1,15 +1,22 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.inner-width{
-  max-width: 1463px ;
+.inner-width {
+  max-width: 1463px;
   margin: 0 auto;
 }
-
-
+@media (min-width: 1200px) {
+  .xl\:ml-68 {
+    margin-left: 17rem;
+  }
+}
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  background-color: #f9fafb !important;
+}

@@ -42,7 +42,7 @@ const Home = () => {
             Future
           </h4>
           <p className={styles.aboutWaste}>
-            At Zero Waste, we're on a mission to revolutionize waste management
+            At Zero Waste, we are on a mission to revolutionize waste management
             for a cleaner, greener future. With a focus on environmental
             sustainability, we offer tailored solutions for residential,
             institutional, and commercial clients.
@@ -51,7 +51,7 @@ const Home = () => {
           <p className="text-[#212122]">
             Our team of experts is dedicated to minimizing waste, maximizing
             recycling, and promoting eco-friendly practices. Through innovative
-            technologies and community outreach, we're committed to making a
+            technologies and community outreach, we are committed to making a
             positive impact on the environment and empowering others to do the
             same.
           </p>
