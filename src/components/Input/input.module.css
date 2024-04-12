@@ -16,6 +16,7 @@ input[data-size='small']{
 }
 input[data-variant='primary']{
     background-color: #f6eeee;
+
     margin-bottom: 1.5rem;
     color: black;
     
@@ -31,7 +32,7 @@ label{
 }
 input::placeholder{
     color:#000;
-    font-size: 20px;
+    font-size: 15px;
 }
 .input[data-fullwidth=true]{
     width:100%;
