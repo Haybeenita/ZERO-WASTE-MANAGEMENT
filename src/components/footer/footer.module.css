@@ -9,7 +9,7 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
-    background-color:#000;
+    background-color:#212122;
     margin: 0 104px ;
     color:#fff;
     padding:43.55px 102.18px  43.55px 25.78px ;
@@ -30,6 +30,7 @@
     color:#A74F0F;
     border:1px solid #A74F0F;
     background-color:#A74F0F;
+    
 }
 .btns .btn{
     margin-left:30.6px;

@@ -50,7 +50,7 @@ export const NavBar = () => {
       <div className={styles.logo}>
         <div className="flex">
         <img src="/zerowastelogo2.svg" alt="" className="relative"/>
-        <p className="absolute mt-[2rem] ml-[5rem] text-[#145D0D] font-semibold text-lg flex gap-1 items-center">ZERO <span className="text-[#51AD44]">WASTE</span></p>
+        <p className="absolute mt-[2.3rem] ml-[5rem] text-[#145D0D] font-semibold text-lg flex gap-1 items-center">ZERO <span className="text-[#51AD44]">WASTE</span></p>
         </div>
 
       </div>

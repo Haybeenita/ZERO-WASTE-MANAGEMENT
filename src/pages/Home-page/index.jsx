@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import React from "react";
 import styles from "./homepage.module.css";
 import { NavLinks, NavBar } from "../../components/Nav1";
@@ -15,6 +16,7 @@ const Home = () => {
         aos-duration="3000"
         aos-delay="100"
       >
+        <div className={styles['hero-overlay']}></div>
         <h1>
           Sustainable Waste <span>Solutions for Every </span>
           <span>Environment</span>
@@ -65,7 +67,11 @@ const Home = () => {
           aos-delay="400"
           aos-duration="2000"
         >
-          <img src="src\assets\images\Rectangle 6.png" alt="" className="rounded-[10px]" />
+          <img
+            src="src\assets\images\Rectangle 6.png"
+            alt=""
+            className="rounded-[10px]"
+          />
           <img
             className={styles.review}
             src="src\assets\images\Frame 23.png"
@@ -128,7 +134,8 @@ const Home = () => {
               <p>
                 We offer commercial customers reliable and regular collection of
                 trash and organic materials on a scheduled or call in basics,
-                with a safe & unique level of services to maintain a clean and healthy environment.
+                with a safe & unique level of services to maintain a clean and
+                healthy environment.
               </p>
             </div>
             <div className={styles.blockImg}>
@@ -169,7 +176,7 @@ const Home = () => {
             aos-duration="8000"
           >
             <div className="rounded-full w-[6rem] h-[6rem] bg-blend-transparent mb-[0.5rem]">
-              <img src="/testimonial2.png" className="rounded-full pt-[2rem]"/>
+              <img src="/testimonial2.png" className="rounded-full pt-[2rem]" />
             </div>
             <p className="mt-[3rem] text-[#212122]">
               Zero waste has been a life saver. I was able to get them to send
@@ -184,8 +191,8 @@ const Home = () => {
             aos-delay="200"
             aos-duration="8000"
           >
-            <div className= "rounded-full w-[6rem] h-[6rem] mb-[0.5rem]">
-              <img src="testimonial1.png" className="pt-[2rem]"/>
+            <div className="rounded-full w-[6rem] h-[6rem] mb-[0.5rem]">
+              <img src="testimonial1.png" className="pt-[2rem]" />
             </div>
             <p className="mt-[3rem] text-[#212122]">
               Zero waste has been a life saver. I was able to get them to send
@@ -201,7 +208,7 @@ const Home = () => {
             aos-duration="8000"
           >
             <div className="rounded-full w-[7rem] h-[7rem] mb-[0.5rem]">
-              <img src="/testimonial3.png" className="pt-[2rem]"/>
+              <img src="/testimonial3.png" className="pt-[2rem]" />
             </div>
             <p className="mt-[3rem] text-[#212122]">
               Zero waste has never failed me. they are always fast whenever you
@@ -212,7 +219,12 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div data-aos="fade-down" aos-easing="linear" aos-duration="1500" className="mt-[5rem]">
+      <div
+        data-aos="fade-down"
+        aos-easing="linear"
+        aos-duration="1500"
+        className="mt-[5rem]"
+      >
         <Footer />
       </div>
     </div>

@@ -21,12 +21,18 @@ const BookingPage =()=> {
               <span className="text-[#0E5808] font-medium"> Account </span> to
               access features
             </p>
-            <div className="flex flex-col w-[20rem] ml-[4rem] mt-[2rem]">
+            <div className="flex flex-col w-[24rem] ml-[4rem] mt-[2rem]">
               <div>
-                <p className="text-black font-medium">Profile Name:</p>
-
-                <Input variant="primary" padding="8px" placeholder="name" />
-                <p className="text-black font-medium">Email:</p>
+               <div className='flex justify-between'>
+                <label className="text-black font-medium">Profile Name
+                  <Input variant="primary" padding="8px" placeholder="name" />
+                  </label>
+                  <label className="text-black font-medium">Last Name
+                  <Input variant="primary" padding="8px" placeholder="name" />
+                  </label>
+               </div>
+               
+                <p className="text-black font-medium">Email address</p>
                 <i
                   src="/emailogoregister.png"
                   alt=""
