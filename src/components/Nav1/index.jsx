@@ -8,7 +8,7 @@ export const NavLinks = () => {
         <div className={styles.address}>
           <p className={styles.icon}>
             <span>
-              <img  src="src\assets\images\location.png" className="object-fit"  />
+              <img  src="src\assets\images\location.png" className=""  />
             </span>
             1578 Bisalla road, New Haven Enugu
           </p>
@@ -70,11 +70,6 @@ export const NavBar = () => {
         </div>
         <div>
           <Button variant="primary" size="xxxsmall"><Link to="/Register"> Register</Link>
-          </Button>
-        </div>
-        <div>
-          <Button variant="primary" size="medium"><Link to="/Bookus">Request pickup</Link>
-            
           </Button>
         </div>
       </div>

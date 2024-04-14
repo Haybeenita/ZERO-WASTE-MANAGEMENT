@@ -2,46 +2,46 @@ import React, { useEffect } from "react";
 import Input from "../../../components/Input";
 import Button from "../../../components/Buttons";
 import { useState } from "react";
-import { logIn } from "../../../Firebase/Firebase.jsx";
+import axios from "axios";
+
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleLogin } from "../../../Firebase/Firebase.jsx";
-import { useContext } from "react";
-import { authContext } from "../../../Providers";
-
+import { LoginApi } from "../../../BACKEND/Backend.js";
 const Login = () => {
-  const [registration, setRegistration] = useState(false);
-  const { loading, authUser } = useContext(authContext),
-    navigate = useNavigate();
-  console.log(authUser, loading);
+  const navigate = useNavigate();
+  const [user, setUser] = useState({});
   const [formFilled, setFormFilled] = useState({
     email: "",
     password: "",
   });
+  const formData = new FormData();
+
+  formData.append("email", formFilled.email);
+  formData.append("password", formFilled.password);
+
+  const headers = {
+    "Content-Type": "multipart/form-data",
+  };
+  const signIn = (e) => {
+    e.preventDefault();
+    axios
+      .post(`${LoginApi}`, formData, headers)
+      .then(function (response) {
+        console.log(response, "response from db");
+        setUser(response.data);
+        navigate("/dashboard");
+      })
+      .catch(function (error) {
+        setUser(error.data);
+        console.log(error, "error from db");
+      });
+  };
   const handleInputChange = (e) => {
     setFormFilled({
       ...formFilled,
       [e.target.name]: e.target.value,
     });
   };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const userLogin = await logIn(formFilled.email, formFilled.password);
-      console.log("user data: ", userLogin);
-      if (userLogin) {
-        setRegistration(true);
-        navigate("/dashboard");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    if (authUser != null) {
-      navigate("/dashboard");
-    }
-  }, [authUser, navigate]);
 
   return (
     <>
@@ -57,7 +57,7 @@ const Login = () => {
             <p className="text-black flex justify-center md:mt-[1rem] mt-[0.2rem] font-medium md:text-xl text-sm">
               Welcome back, you have been missed!
             </p>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={signIn}>
               <div className="flex flex-col md:w-[20rem] w-[18rem] md:ml-[5rem] ml-[2rem] md:mt-[2rem] mt-[1rem] justify-center ">
                 <div>
                   <Input
@@ -119,13 +119,6 @@ const Login = () => {
                 onClick={() => GoogleLogin()}
               />
             </div>
-          </div>
-          <div className="absolute mr-[11rem] ">
-            {registration && (
-              <p className="text-black text-lg font-semibold mb-[1rem] mt-[1rem] text-center">
-                login successful
-              </p>
-            )}
           </div>
         </div>
       </div>

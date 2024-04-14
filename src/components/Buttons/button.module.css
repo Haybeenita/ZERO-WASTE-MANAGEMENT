@@ -34,7 +34,8 @@
     color:#fff;
     background-color: transparent;
     border: 3px solid #D9D9D9;
-    hover: white
+    hover: white;
+    border-radius: 10px;
 }
 .btn[data-variant='secondary']{
     width: 232px;
@@ -42,6 +43,7 @@
     padding: 21px 18px ;
     background-color: #D9D9D9;
     color:#1E1E1E;
+    border-radius: 10px;
 }
 .btn[data-size='xsmall']{
     width: 230.97px;
@@ -65,6 +67,6 @@
     padding: 11px 33.43px 11px 21.46px;
     background-color:#51AD44;
     border-radius:10px ;
-    margin-right: ;
+    font-size: 20px;
 
 }

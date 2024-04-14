@@ -3,7 +3,7 @@ import React from "react";
 const Order = () => {
   return (
     <div>
-      <div className="flex ml-[2rem] gap-[4rem] mt-[2rem]">
+      <div className="flex ml-[2rem] gap-[4rem] mt-[2rem] relative">
         <div className="w-[14rem] h-[6rem]  border-2 bg-zero-200 border-zero-300 text-xl font-semibold rounded-2xl pt-[0.5rem] text-[#212122]">
           <span className="ml-[1rem]">Total Orders:</span>
         </div>

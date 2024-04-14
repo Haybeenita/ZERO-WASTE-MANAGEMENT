@@ -2,64 +2,47 @@ import { useState } from "react";
 // import {useNavigate} from "react-router-dom"
 import Button from "../../../components/Buttons";
 import Input from "../../../components/Input";
-import { signUp } from "../../../Firebase/Firebase.jsx";
-import { useContext } from "react";
-import { authContext } from "../../../Providers";
-// import {Navigate} from "react-router-dom"
-import {useNavigate} from "react-router-dom"
+import axios from "axios";
+import { RegisterApi } from "../../../BACKEND/Backend";
+import { useNavigate } from "react-router-dom";
+
 const Register = () => {
   const navigate = useNavigate()
-  const [registration,setRegistration] = useState(false)
-  const {loading,authUser}= useContext(authContext)
-
-  console.log(loading,authUser)
+  const [user,setUser] = useState({})
   const [formFilled, setFormFilled] = useState({
     email: "",
     password: "",
     phonenumber: "",
     username: "",
   });
+
+  const signUp = (e)=>{
+    e.preventDefault();
+    axios.post(`${RegisterApi}`, {
+      display_name: formFilled.username,
+      email: formFilled.email,
+      phone_number: formFilled.phonenumber,
+      password: formFilled.password
+    })
+    .then(function (response) {
+      console.log(response,'response from db');
+      setUser(response.data)
+      navigate('/dashboard')
+    })
+    .catch(function (error) {
+      setUser(error.data)
+      console.log(error,'error from db');
+    });
+  }
   const handleInputChange = (e) => {
     setFormFilled({
       ...formFilled,
       [e.target.name]: e.target.value,
     });
   };
-  // const clearFormFilled = () => {
-  //   setFormFilled({
-  //     email: "",
-  //     password: "",
-  //     phonenumber: "",
-  //     username: "",
-  //   });
-  // }
 
-  // console.log(formFilled)
   
- const register = async () => {
-    // console.log(formFilled);
-  // let res
-  // let {email, password} = formFilled
-  // try {
-  //    const res = await signUp(email, password)
-  //     console.log(res)
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-     signUp(formFilled.email, formFilled.password)
-     setRegistration(true)
-      .then((res) => {
-        console.log("signup", res);
-        // navigate("/Bookus");
-        setFormFilled({
-          email: "",
-          password: "",
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+ 
 
   return (
     <div className="relative h-screen bg-cover bg-center filter bg-[url('../../../src/assets/images/animation1.jpg')]">
@@ -82,7 +65,7 @@ const Register = () => {
               to access features
             </p>
             <div className="flex relative flex-col w-[18rem] md:w-[22rem] ml-[1.8rem] md:ml-[4rem] md:mt-[2rem] mt-[0.5rem]">
-              <div>
+              <form onSubmit={signUp}>
                 <p className="text-black font-normal md:font-medium">Name:</p>
 
                 <Input
@@ -129,19 +112,21 @@ const Register = () => {
                   name="password"
                   value={formFilled.password}
                 />
-              </div>
-
               <div className="flex justify-center md:mt-4 mt-4">
                 <Button
                   variant="primary"
                   size="large"
                   type="submit"
-                  handleClick={()=>register()}
+                 
                 >
                   Register
                 </Button>
               </div>
-              {registration && <p className="text-black text-lg absolute font-semibold mb-[1rem] mt-[22rem] text-center">user created successfully</p>}
+              {/* {user?.data?.status === 200? <p>Register successfull</p>:
+              <p>error occured</p>
+              } */}
+              </form>
+             
             </div>
           </div>
         </div>
