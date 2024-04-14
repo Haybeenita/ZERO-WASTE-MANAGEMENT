@@ -1,9 +1,9 @@
 import { FaHome } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const DashboardHeader = ({ title = "Dashboard", handleToggle = () => {} }) => {
+const AdminDashboardHeader = ({ title = "Dashboard", handleToggle = () => {} }) => {
   return (
-    <nav className="relative flex flex-wrap items-center justify-between px-0 py-2 transition-all shadow-2xl duration-250 ease-soft-in lg:flex-nowrap lg:justify-start sticky top-0">
+    <nav className="relative flex flex-wrap items-center justify-between px-0 py-2 transition-all shadow-2xl duration-250 ease-soft-in lg:flex-nowrap lg:justify-start">
       <div className="flex items-center justify-between w-full px-4 py-1 mx-auto flex-wrap-inherit">
         <nav>
           <ol className="flex flex-wrap pt-1 mr-12 bg-transparent rounded-lg sm:mr-16">
@@ -27,24 +27,7 @@ const DashboardHeader = ({ title = "Dashboard", handleToggle = () => {} }) => {
               className="text-sm pl-2 capitalize leading-normal text-slate-700 before:float-left before:pr-2 before:text-gray-600 before:content-['/'] dark:text-white dark:before:text-white"
               aria-current="page"
             >
-              User
-            </li>
-            <li className="flex gap-2 ml-[52rem]">
-              <p className="text-[#212122] font-medium text-md capitalize">Bonnie green</p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="#212122"
-                className="w-6 h-6 "
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                />
-              </svg>
+             Admin
             </li>
           </ol>
           <h6 className="mb-0 font-bold capitalize dark:text-white">{title}</h6>
@@ -56,13 +39,13 @@ const DashboardHeader = ({ title = "Dashboard", handleToggle = () => {} }) => {
           >
             <ul className="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
               <li className="flex items-center">
-                {/* <a
+                <a
                   href="https://demos.creative-tim.com/soft-ui-dashboard-pro-tailwind/pages/authentication/signin/illustration.html"
                   className="block px-0 py-2 font-semibold transition-all ease-nav-brand text-sm text-slate-500 dark:text-white"
                 >
                   <i className="fa fa-user sm:mr-1" aria-hidden="true" />
                   <span className="hidden sm:inline">Sign In</span>
-                </a> */}
+                </a>
               </li>
               <li className="flex items-center pl-4 xl:hidden">
                 <span
@@ -108,4 +91,4 @@ const DashboardHeader = ({ title = "Dashboard", handleToggle = () => {} }) => {
   );
 };
 
-export default DashboardHeader;
+export default AdminDashboardHeader;

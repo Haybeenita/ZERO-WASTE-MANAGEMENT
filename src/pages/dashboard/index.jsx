@@ -1,8 +1,9 @@
-import { Route, Routes } from "react-router-dom";
+import { Outlet, Route, Routes } from "react-router-dom";
 import DashboardHome from "./home";
 import DashboardSidebar from "../../components/inc/sidebar";
 import DashboardHeader from "../../components/inc/header";
 import { useState } from "react";
+import Order from "./Orders/Orders";
 
 function Dashboard() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -11,9 +12,7 @@ function Dashboard() {
       <DashboardSidebar />
       <main className="relative h-full max-h-screen transition-all duration-200 ease-soft-in-out xl:ml-68 rounded-xl overflow-y-auto">
         <DashboardHeader />
-        <Routes>
-          <Route index element={<DashboardHome />}></Route>
-        </Routes>
+        <Outlet />
       </main>
     </div>
   );

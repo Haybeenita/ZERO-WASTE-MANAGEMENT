@@ -30,7 +30,7 @@ const Login = () => {
       console.log("user data: ", userLogin);
       if (userLogin) {
         setRegistration(true);
-        navigate("/user");
+        navigate("/dashboard");
       }
     } catch (error) {
       console.log(error);
@@ -39,7 +39,7 @@ const Login = () => {
 
   useEffect(() => {
     if (authUser != null) {
-      navigate("/user");
+      navigate("/dashboard");
     }
   }, [authUser, navigate]);
 
