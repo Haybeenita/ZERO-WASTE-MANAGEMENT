@@ -4,7 +4,7 @@ import { createContext, useState } from "react";
 export const authContext = createContext({});
 const AuthProvider = ({ children }) => {
   // const navigate = useNavigate()
-  const [authUser, setAuthUser] = useState(null);
+  const [authUser, setAuthUser] = useState({});
   const [loading, setLoading] = useState(true);
  
   const shared = {

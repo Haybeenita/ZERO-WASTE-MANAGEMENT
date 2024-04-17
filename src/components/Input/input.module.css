@@ -4,20 +4,21 @@
 input{
     outline: none;
     border:none;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 input[data-size='small']{
     width:415.55px;
     height:46.22px;
     font-size:18px;
-    color:#fff;
+    color:#e5f6e2;
     background-color:transparent;
     border:2px solid #fff;
 }
 input[data-variant='primary']{
-    background-color: #f6eeee;
+    background-color:#e5f6e2;
     margin-bottom: 1.5rem;
     color: black;
+    
     
 }
     
@@ -40,5 +41,11 @@ input::placeholder{
 @media only screen and (max-width: 600px){
     input[data-variant='primary']{
         margin-bottom: 0.7rem;
+    }
+}
+
+@media only screen and (max-width:1024px){
+    input::placeholder{
+        font-size: 14px;
     }
 }

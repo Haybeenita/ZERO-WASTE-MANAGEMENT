@@ -19,13 +19,13 @@ export const LogOut = () => {
 
   return (
     <>
-    <div className="w-full p-6 mx-auto max-w-full px-3 lg:flex-0 shrink-0 relative">
+    <div className="w-full p-6 mx-auto lg:max-w-full max-w-[5rem] px-3 lg:flex-0 shrink-0 relative">
       {showModal && (
-        <div className="bg-white shadow-2xl h-[15rem] w-[25rem] rounded-2xl mx-auto">
-          <h3 className="text-lg text-center font-bold pt-8">
-            You Sure Say You Wan Log Out?
+        <div className="bg-white shadow-2xl h-[15rem] w-[10rem] lg:w-[25rem] rounded-2xl mx-auto">
+          <h3 className="text-lg text-center text-[#212122] font-bold item pt-8">
+          Are you sure you're ready to log out? Don't forget, your next adventure awaits your return!
           </h3>
-          <div className="flex flex-row justify-center w-full items-center mt-[6rem]">
+          <div className="flex flex-row justify-center w-full items-center mt-[3rem]">
             <button
               onClick={() => closeModalYes()}
               className="btn bg-[#51AD44] text-white text-[13px] border-0 outline-0 mr-[10rem]"
@@ -41,7 +41,7 @@ export const LogOut = () => {
           </div>
         </div>
       )}
-      <button className="btn bg-[#51AD44] text-white text-[13px] border-0 outline-0 " onClick={()=> toggleModal()}>Logout</button>
+      <button className="btn bg-[#51AD44] text-white flex items-center justify-center text-[13px] ml-[36rem] mt-[1.5rem] border-0 outline-0 " onClick={()=> toggleModal()}>Logout</button>
     </div>
     </>
   );

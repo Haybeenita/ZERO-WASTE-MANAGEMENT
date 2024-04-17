@@ -3,11 +3,15 @@ import Input from "../../../components/Input";
 import Button from "../../../components/Buttons";
 import { useState } from "react";
 import axios from "axios";
-
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleLogin } from "../../../Firebase/Firebase.jsx";
 import { LoginApi } from "../../../BACKEND/Backend.js";
+import { useContext } from "react";
+import { authContext } from "../../../Providers/index.jsx";
 const Login = () => {
+  const [loading,setLoading]= useState(false)
+  const {authUser,setAuthUser} = useContext(authContext)
+
   const navigate = useNavigate();
   const [user, setUser] = useState({});
   const [formFilled, setFormFilled] = useState({
@@ -16,25 +20,36 @@ const Login = () => {
   });
   const formData = new FormData();
 
-  formData.append("email", formFilled.email);
+  formData.append("username", formFilled.email);
   formData.append("password", formFilled.password);
 
-  const headers = {
-    "Content-Type": "multipart/form-data",
-  };
+  // const headers = {
+  //   "Content-Type": "multipart/form-data",
+  // };
   const signIn = (e) => {
     e.preventDefault();
+    setLoading(true)
     axios
-      .post(`${LoginApi}`, formData, headers)
+      .post(`${LoginApi}`, formData, { headers: {'Content-Type': 'multipart/form-data' }})
       .then(function (response) {
         console.log(response, "response from db");
-        setUser(response.data);
+        // setUser(response.data);
+        setAuthUser(response.data);
+        setLoading(false)
+        const token = response.data.access_token;
+        localStorage.setItem("token", token);
+        console.log(authUser,'auth user updated');
+        console.log(response.data,'data from db');
+        console.log(token,'usertoken updated');
         navigate("/dashboard");
       })
       .catch(function (error) {
         setUser(error.data);
+        setLoading(false)
         console.log(error, "error from db");
       });
+
+
   };
   const handleInputChange = (e) => {
     setFormFilled({
@@ -84,10 +99,11 @@ const Login = () => {
                   Forgot password
                 </p>
                 <div className="flex justify-center md:mt-6 mt-4">
-                  <Button variant="primary" size="large" type="submit">
-                    Sign in
+                  <Button variant="primary" size="large" type="submit" isDisabled={loading}>
+                    {loading ? <span className="loader" /> : "Sign in"}
                   </Button>
                 </div>
+                
                 <div className="flex gap-1 font-normal text-base text-black md:ml-6 ml-2 md:mt-2 mt-1">
                   <span>Not a member?</span>
                   <p className="text-[#0E5808] hover:text-blue-600 underline hover:underline-offset-4 cursor-pointer">

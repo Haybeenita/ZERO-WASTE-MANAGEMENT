@@ -1,9 +1,11 @@
 import { FaHome } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
-const DashboardHeader = ({ title = "Dashboard", handleToggle = () => {} }) => {
+import { useContext } from "react";
+import { authContext } from "../../Providers/index.jsx";
+const DashboardHeader = ({title = "Dashboard", handleToggle = () => {} }) => {
+  const {authUser} = useContext(authContext)
   return (
-    <nav className="relative flex flex-wrap items-center px-0 transition-all shadow-2xl duration-250 ease-soft-in lg:flex-nowrap lg:justify-start sticky top-0">
+    <nav className="flex flex-wrap items-center px-0 transition-all shadow-lg duration-250 ease-soft-in lg:flex-nowrap lg:justify-start sticky top-0">
       <div className="flex items-center justify-between w-full px-4 py-1 mx-auto flex-wrap-inherit">
         <nav>
           <ol className="flex flex-wrap pt-1 mr-12 bg-transparent rounded-lg sm:mr-16">
@@ -29,7 +31,7 @@ const DashboardHeader = ({ title = "Dashboard", handleToggle = () => {} }) => {
             >
               User
             </li>
-            <li className="flex gap-2 ml-[52rem] mt-[1rem]">
+            <li className="xl:flex hidden gap-2 xl:ml-[53rem] mt-[1rem]">
             
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +47,7 @@ const DashboardHeader = ({ title = "Dashboard", handleToggle = () => {} }) => {
                   d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
                 />
               </svg>
-              <p className="text-[#212122] font-medium text-md capitalize mt-[0.3rem]">Bonnie green</p>
+              <p className="text-[#212122] font-medium text-md capitalize mt-[0.3rem]">{authUser?.display_name}</p>
             </li>
           </ol>
           <h6 className="mb-0 font-bold capitalize dark:text-white">{title}</h6>

@@ -1,6 +1,11 @@
 import styles from "./nav.module.css";
 import Button from "../Buttons";
 import { Link } from "react-router-dom";
+import { IoLocationOutline } from "react-icons/io5";
+import { MdOutlineEmail } from "react-icons/md";
+import { CiFacebook } from "react-icons/ci";
+import { FaXTwitter } from "react-icons/fa6";
+import { CiLinkedin } from "react-icons/ci";
 export const NavLinks = () => {
   return (
     <div className="bg-[#51AD44] w-full ">
@@ -8,14 +13,14 @@ export const NavLinks = () => {
         <div className={styles.address}>
           <p className={styles.icon}>
             <span>
-              <img  src="src\assets\images\location.png" className=""  />
+            <IoLocationOutline className="w-6 h-6" />
             </span>
             1578 Bisalla road, New Haven Enugu
           </p>
           <p className={styles.icon2}>
             {" "}
             <span>
-              <img src="src\assets\images\Vector (2).png" />
+            <MdOutlineEmail className="w-6 h-6" />
             </span>
             zerowaste@gmail.com
           </p>
@@ -23,19 +28,19 @@ export const NavLinks = () => {
         <div className={styles.socialMedia}>
           <p className={styles.icon2}>
             <span>
-              <img src="src\assets\images\facebook.png" />
+            <CiFacebook className="w-6 h-6"/>
             </span>
             Facebook
           </p>
           <p className={styles.icon2}>
             <span>
-              <img src="src\assets\images\twitter.png" />
+            <FaXTwitter className="w-5 h-5 items-center mt-[0.2rem]"/>
             </span>
             Twitter
           </p>
           <p className={styles.icon2}>
             <span>
-              <img src="src\assets\images\linkedin.png" />
+            <CiLinkedin className="w-6 h-6"/>
             </span>
             Linkedin
           </p>

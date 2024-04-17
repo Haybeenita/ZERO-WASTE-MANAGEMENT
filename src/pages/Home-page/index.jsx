@@ -16,7 +16,7 @@ const Home = () => {
         aos-duration="3000"
         aos-delay="100"
       >
-        <div className={styles['hero-overlay']}></div>
+        <div className={styles["hero-overlay"]}></div>
         <h1>
           Sustainable Waste <span>Solutions for Every </span>
           <span>Environment</span>
@@ -178,12 +178,14 @@ const Home = () => {
             <div className="rounded-full w-[6rem] h-[6rem] bg-blend-transparent mb-[0.5rem]">
               <img src="/testimonial2.png" className="rounded-full pt-[2rem]" />
             </div>
-            <p className="mt-[3rem] text-[#212122]">
+
+            <h4 className="text-[#212122] font-medium mt-[1rem]">Ken</h4>
+            <p className="text-[#212122]  ">Manager</p>
+            <p className=" mt-[1rem] mb-[6rem] text-[#212122]">
               Zero waste has been a life saver. I was able to get them to send
-              out their staff to help with my waste pick up after my wedding
+              out their staff to help with my waste pick up after my wedding.
             </p>
-            <h4 className="text-[#212122] font-medium mt-[2rem]">ken</h4>
-            <p className="text-[#212122] mb-[3rem]">MANAGER</p>
+
           </div>
           <div
             className={styles.cardOne}
@@ -194,12 +196,13 @@ const Home = () => {
             <div className="rounded-full w-[6rem] h-[6rem] mb-[0.5rem]">
               <img src="testimonial1.png" className="pt-[2rem]" />
             </div>
-            <p className="mt-[3rem] text-[#212122]">
+
+            <h4 className="text-[#212122] font-medium mt-[1rem]">Chris</h4>
+            <p className="text-[#212122]  ">User</p>
+            <p className=" mt-[1rem] mb-[6rem] text-[#212122]">
               Zero waste has been a life saver. I was able to get them to send
-              out their staff to help with my waste pick up after my wedding
+              out their staff to help with my waste pick up after my wedding.
             </p>
-            <h4 className="text-[#212122] font-medium mt-[2rem]">Chris</h4>
-            <p className="text-[#212122] mb-[3rem]">USER</p>
           </div>
           <div
             className={styles.cardOne}
@@ -210,12 +213,12 @@ const Home = () => {
             <div className="rounded-full w-[7rem] h-[7rem] mb-[0.5rem]">
               <img src="/testimonial3.png" className="pt-[2rem]" />
             </div>
-            <p className="mt-[3rem] text-[#212122]">
+            <h4 className="text-[#212122] font-medium mt-[1rem]">Angela</h4>
+            <p className="text-[#212122]  ">manager</p>
+            <p className=" mt-[1rem] mb-[6rem] text-[#212122]">
               Zero waste has never failed me. they are always fast whenever you
               schedule for a pick up.
             </p>
-            <h4 className="text-[#212122] font-medium mt-[2rem]">Angela</h4>
-            <p className="text-[#212122] mb-[3.5rem]">manager</p>
           </div>
         </div>
       </div>

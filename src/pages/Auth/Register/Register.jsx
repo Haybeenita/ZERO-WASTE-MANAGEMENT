@@ -4,11 +4,14 @@ import Button from "../../../components/Buttons";
 import Input from "../../../components/Input";
 import axios from "axios";
 import { RegisterApi } from "../../../BACKEND/Backend";
-import { useNavigate } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { authContext } from "../../../Providers/index.jsx";
 const Register = () => {
-  const navigate = useNavigate()
-  const [user,setUser] = useState({})
+  const {authUser,setAuthUser} = useContext(authContext)
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const [user, setUser] = useState({});
   const [formFilled, setFormFilled] = useState({
     email: "",
     password: "",
@@ -16,33 +19,35 @@ const Register = () => {
     username: "",
   });
 
-  const signUp = (e)=>{
+  const signUp = (e) => {
+    setLoading(true);
     e.preventDefault();
-    axios.post(`${RegisterApi}`, {
-      display_name: formFilled.username,
-      email: formFilled.email,
-      phone_number: formFilled.phonenumber,
-      password: formFilled.password
-    })
-    .then(function (response) {
-      console.log(response,'response from db');
-      setUser(response.data)
-      navigate('/dashboard')
-    })
-    .catch(function (error) {
-      setUser(error.data)
-      console.log(error,'error from db');
-    });
-  }
+    axios
+      .post(`${RegisterApi}`, {
+        display_name: formFilled.username,
+        email: formFilled.email,
+        phone_number: formFilled.phonenumber,
+        password: formFilled.password,
+      })
+      .then(function (response) {
+        console.log(response, "response from db");
+        setAuthUser(response.data);
+        console.log(authUser,'from register')
+        setLoading(false);
+        navigate("/login");
+      })
+      .catch(function (error) {
+        setUser(error.data);
+        console.log(error, "error from db");
+        setLoading(false);
+      });
+  };
   const handleInputChange = (e) => {
     setFormFilled({
       ...formFilled,
       [e.target.name]: e.target.value,
     });
   };
-
-  
- 
 
   return (
     <div className="relative h-screen bg-cover bg-center filter bg-[url('../../../src/assets/images/animation1.jpg')]">
@@ -59,7 +64,6 @@ const Register = () => {
             <p className="flex font-semibold text-black items-center justify-center gap-1 md:mt-[1rem] mt-[0.5rem] text-base md:text-lg">
               Create an
               <span className="text-[#0E5808] font-normal md:font-medium">
-                
                 Account
               </span>
               to access features
@@ -112,21 +116,22 @@ const Register = () => {
                   name="password"
                   value={formFilled.password}
                 />
-              <div className="flex justify-center md:mt-4 mt-4">
-                <Button
-                  variant="primary"
-                  size="large"
-                  type="submit"
+                <div className="flex justify-center md:mt-2 mt-2">
+                  <Button
+                    variant="primary"
+                    size="large"
+                    type="submit"
+                    isDisabled={loading}
                  
-                >
-                  Register
-                </Button>
-              </div>
-              {/* {user?.data?.status === 200? <p>Register successfull</p>:
-              <p>error occured</p>
-              } */}
+                  >
+                    {loading ? <span className="loader" /> : "Register"}
+                  </Button>
+                
+                </div>
+                <div className="">
+                  <p className="mt-2 text-[#212122] font-medium text-md md:ml-[3.5rem] ml-[1.5rem] ">Already have an Account? <span className="text-[#0E5808] underline cursor-pointer"><Link to="/login">Sign in</Link></span></p>
+                  </div>
               </form>
-             
             </div>
           </div>
         </div>

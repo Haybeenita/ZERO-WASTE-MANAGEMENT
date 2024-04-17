@@ -1,9 +1,9 @@
 import { Outlet, Route, Routes } from "react-router-dom";
-import DashboardHome from "./home";
+// import DashboardHome from "./home";
 import DashboardSidebar from "../../components/inc/sidebar";
 import DashboardHeader from "../../components/inc/header";
 import { useState } from "react";
-import Order from "./Orders/Orders";
+// import Order from "./Orders/Orders";
 
 function Dashboard() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);

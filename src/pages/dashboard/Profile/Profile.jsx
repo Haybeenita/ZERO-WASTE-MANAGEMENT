@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import { authContext } from "../../../Providers/index.jsx";
 function Profile() {
+  
+  const {authUser} = useContext(authContext)
+  console.log(authUser)
   return (
     <div className="w-full p-6 mx-auto">
       <div className="flex flex-wrap -mx-3">
@@ -11,11 +16,11 @@ function Profile() {
                   src="/testimonial1.png"
                   alt="Bonnie image"
                 />
-                <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">
-                  Bonnie Green
+                <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white capitalize">
+                  {authUser?.display_name}
                 </h5>
                 <span className="text-sm text-gray-500 dark:text-gray-400">
-                  Bonnie@gmail.com
+                 {authUser?.email}
                 </span>
                 <div className="flex mt-4 md:mt-[4.3rem]">
                   <a

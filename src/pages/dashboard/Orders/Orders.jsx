@@ -3,17 +3,17 @@ import React from "react";
 const Order = () => {
   return (
     <div>
-      <div className="flex ml-[2rem] gap-[4rem] mt-[2rem] relative">
-        <div className="w-[14rem] h-[6rem]  border-2 bg-zero-200 border-zero-300 text-xl font-semibold rounded-2xl pt-[0.5rem] text-[#212122]">
-          <span className="ml-[1rem]">Total Orders:</span>
+      <div className="flex lg:ml-[2rem] ml-[0.5rem] mr-[0.5rem] gap-2 lg:gap-[4rem] mt-[2rem] relative">
+        <div className="lg:w-[14rem] w-[12rem] h-[6rem] border-2 bg-zero-200 border-zero-300 lg:text-xl text-sm font-semibold rounded-2xl pt-[0.5rem] text-[#212122]">
+          <span className="lg:ml-[1rem] ml-[0.3rem]">Total Orders:</span>
         </div>
-        <div className="w-[14rem] h-[6rem]  border-2 bg-zero-200 border-zero-300 text-xl font-semibold rounded-2xl pt-[0.5rem] text-[#212122] flex flex-col">
-          <span className="ml-[1rem]">Total Pickups:</span>
-          <span className="ml-[8rem] mt-[1rem]">4</span>
+        <div className="lg:w-[14rem] w-[12rem] h-[6rem]  border-2 bg-zero-200 border-zero-300 lg:text-xl text-sm font-semibold rounded-2xl pt-[0.5rem] text-[#212122] flex flex-col">
+          <span className="lg:ml-[1rem] ml-[0.3rem]">Total Pickups:</span>
+          <span className="font-bold w-[5rem] mt-[0.5rem] lg:text-4xl text-2xl lg:ml-[2rem] ml-[1rem]">4</span>
         </div>
-        <div className="w-[14rem] h-[6rem]  border-2 bg-zero-200 border-zero-300 text-xl font-semibold rounded-2xl pt-[0.5rem] text-[#212122] flex flex-col">
-          <span className="ml-[1rem]">Total Expenditure:</span>
-          <span className="ml-[6rem] mt-[1rem] ">#10,568</span>
+        <div className="lg:w-[14rem] w-[12rem] h-[6rem]  border-2 bg-zero-200 border-zero-300 lg:text-xl text-sm font-semibold rounded-2xl pt-[0.5rem] text-[#212122] flex flex-col">
+          <span className="lg:ml-[1rem] ml-[0.2rem]">Total Expenditure:</span>
+          <span className="mt-[0.5rem] lg:text-4xl text-2xl lg:ml-[2rem] ml-[0.5rem] font-bold">#10,568</span>
         </div>
       </div>
 
@@ -23,8 +23,8 @@ const Order = () => {
           history
         </h3>
 
-        <div className="overflow-x-auto mr-[2rem]">
-          <table className="table table-md text-[#212122] font-medium">
+        <div className="overflow-x-auto lg:mr-[2rem] mr-[1rem]">
+          <table className="table lg:table-md table-sm text-[#212122] font-medium">
             <thead className="text-[#212122] font-semibold capitalize text-lg">
               <tr>
                 <th>s/n</th>

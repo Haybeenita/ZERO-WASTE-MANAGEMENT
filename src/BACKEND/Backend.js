@@ -1,3 +1,5 @@
 
-export const RegisterApi = "https://dd34-105-120-128-112.ngrok-free.app/api/v1/users/register"
-export const LoginApi ="https://83c1-105-120-128-112.ngrok-free.app/api/v1/login"
+export const ServerLink = "5046-105-120-130-202.ngrok-free.app";
+export const RegisterApi = `https://${ServerLink}/api/v1/users/register`;
+export const LoginApi =`https://${ServerLink}/api/v1/login`
+export const booking =`https://${ServerLink}/api/v1/booking/booking`

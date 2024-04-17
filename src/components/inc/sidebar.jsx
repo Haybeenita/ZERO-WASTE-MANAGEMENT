@@ -19,7 +19,7 @@ function DashboardSidebar() {
   return (
     <>
       <aside
-        className="fixed inset-y-0 left-0 flex-wrap items-center justify-between block w-full overflow-y-auto transition-all duration-200 -translate-x-full bg-white shadow-2xl border-0 xl:ml-4 dark:bg-gray-950 ease-in-out z-990 max-w-64 rounded-2xl xl:translate-x-0 xl:bg-transparent"
+        className="fixed left-100% top-0 bottom-0 inset-y-0 md-left-0 flex-wrap items-center justify-between block w-full overflow-y-auto transition-all duration-200 -translate-x-full bg-white shadow-xl border-0 xl:ml-4 dark:bg-gray-950 ease-in-out z-990 max-w-64 rounded-2xl xl:translate-x-0 xl:bg-transparent"
         id="sidenav-main"
       >
         <div className="h-20">
@@ -119,27 +119,27 @@ const LowerSidebarlinkComponent = () => {
 const SidebarLinkData = [
   {
     path: "/dashboard",
-    icon: <FaThList width="12px" height="12px" />,
+    icon: <FaThList className="w-6 h-6" />,
     text: "Dashboard",
   },
   {
     path: "/dashboard/orders",
-    icon: <LuPackage2 width="15px" height="15px" />,
+    icon: <LuPackage2 className="w-6 h-6"  />,
     text: "Orders",
   },
   {
     path: "/dashboard/review",
-    icon: <MdOutlineReviews width="12px" height="12px" />,
+    icon: <MdOutlineReviews className="w-6 h-6"  />,
     text: "Review",
   },
   {
     path: "/dashboard/offers",
-    icon: <BiSolidOffer width="12px" height="12px" />,
+    icon: <BiSolidOffer className="w-6 h-6"  />,
     text: "Offers",
   },
   {
     path: "/dashboard/request",
-    icon: <ImTruck width="12px" height="12px" />,
+    icon: <ImTruck className="w-6 h-6"  />,
     text: "Request Pickup",
   },
 ];

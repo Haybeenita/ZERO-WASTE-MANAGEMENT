@@ -2,6 +2,11 @@ import React from 'react'
 
 export const Offers = () => {
   return (
-    <div className=' mt-[15rem] ml-[25rem] font-bold text-3xl text-black'>COMING SOON!</div>
+   <>
+   <div className= "flex ml-[2rem] gap-[4rem] mt-[2rem] w-[70rem] h-[39rem] relative" >
+
+    <p className='text-3xl font-bold text-[#212122] items-center mt-[15rem] ml-[28rem]'>COMING SOON!!!</p>
+    </div>
+   </>
   )
 }
