@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Input from "../../../components/Input";
 import Button from "../../../components/Buttons";
 import axios from "axios";
 import { booking } from "../../../BACKEND/Backend";
 
+
 const BookingPage = () => {
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   const [paymentForm, setPaymentForm] = useState({});
   const [formFilled, setFormFilled] = useState({
     first_name: "",
@@ -34,12 +37,13 @@ const BookingPage = () => {
         address: formFilled.address,
         pickup_date: formFilled.pickup_date,
         waste_type: formFilled.waste_type,
-        order_status: "PENDING"
+        order_status: "PENDING",
       })
       .then(function (response) {
         console.log(response, "response from db");
         setPaymentForm(response.data);
         setLoading(false);
+        navigate("/payment")
         // Navigate to some page after successful booking
         // You might need to import 'navigate' from your router library
         // navigate("/login");
@@ -97,7 +101,7 @@ const BookingPage = () => {
               />
             </label>
             <label className="text-black font-medium lg:text-[16px] text-sm">
-             Email
+              Email
               <Input
                 variant="primary"
                 padding="8px"
@@ -150,8 +154,8 @@ const BookingPage = () => {
             </select>
           </div>
           <div className="flex justify-center mt-4 font-bold">
-            <Button type="submit" variant="primary" size="large">
-              Request Pickup
+            <Button type="submit" variant="primary" size="large" isDisabled={loading}>
+               <Link to="/payment">{loading ? <span className="loader" /> : "Request pickup"}  </Link>
             </Button>
           </div>
         </form>

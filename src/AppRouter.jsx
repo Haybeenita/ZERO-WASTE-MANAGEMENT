@@ -22,7 +22,8 @@ const router = createBrowserRouter([
   { path: "/Register", element: <Register/> },
   { path: "/Login", element: <Login/> },
   { path: "/admin", element:<Admindashboard/>},
-  {path: "/payment", element:<PaystackIntegration/>},
+  {path: "payment", element:<PaystackIntegration/>},
+  
   
   {
     path: "/dashboard",
@@ -39,6 +40,7 @@ const router = createBrowserRouter([
       {path:"request", element: <BookingPage/>},
       {path:"setting", element:<Profile/>},
       {path:"logout", element:<LogOut/>},
+      
     ]
   }
 ]);
