@@ -30,7 +30,7 @@ const Login = () => {
     e.preventDefault();
     setLoading(true)
     await axios
-      .post(`https://my-home-xlox.onrender.com/api/login`, formData, { headers: {'Content-Type': 'multipart/form-data' }})
+      .post(`${LoginApi}`, formData, { headers: {'Content-Type': 'multipart/form-data' }})
       .then(function (response) {
         console.log(response, "response from db");
         // setUser(response.data);

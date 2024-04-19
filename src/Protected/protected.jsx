@@ -16,7 +16,7 @@ console.log(token);
   useEffect(()=>{
     // console.log(authUser,'authuser from profile')
     if(token){
-        axios.get(`https://my-home-xlox.onrender.com/api/me`,{
+        axios.get(`${profile}`,{
           headers:{
             accept:'application/json',
             Authorization: `Bearer ${token}`
