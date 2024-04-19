@@ -4,10 +4,14 @@ import Input from "../../../components/Input";
 import Button from "../../../components/Buttons";
 import axios from "axios";
 import { booking } from "../../../BACKEND/Backend";
-
+import { useContext } from "react";
+import { authContext } from "../../../Providers/index.jsx";
 
 const BookingPage = () => {
+  const { bookingDetails, setBookingDetails,} = useContext(authContext)
   const [loading, setLoading] = useState(false);
+ 
+
   const navigate = useNavigate();
   const [paymentForm, setPaymentForm] = useState({});
   const [formFilled, setFormFilled] = useState({
@@ -27,10 +31,13 @@ const BookingPage = () => {
   };
 
   const BookUs = (e) => {
+    const token = localStorage.getItem('token')
+    console.log(token)
     e.preventDefault();
     setLoading(true);
     axios
-      .post(`${booking}`, {
+      .post(`${booking}`,{
+ 
         first_name: formFilled.first_name,
         last_name: formFilled.last_name,
         phone: formFilled.phone,
@@ -38,10 +45,15 @@ const BookingPage = () => {
         pickup_date: formFilled.pickup_date,
         waste_type: formFilled.waste_type,
         order_status: "PENDING",
-      })
+      },{headers:{
+        accept:'application/json',
+        Authorization: `Bearer ${token}`,
+        ContentType: 'application/json',
+      },})
       .then(function (response) {
         console.log(response, "response from db");
         setPaymentForm(response.data);
+
         setLoading(false);
         navigate("/payment")
         // Navigate to some page after successful booking
@@ -155,7 +167,7 @@ const BookingPage = () => {
           </div>
           <div className="flex justify-center mt-4 font-bold">
             <Button type="submit" variant="primary" size="large" isDisabled={loading}>
-               <Link to="/payment">{loading ? <span className="loader" /> : "Request pickup"}  </Link>
+               {loading ? <span className="loader" /> : "Request pickup"}  
             </Button>
           </div>
         </form>
