@@ -35,7 +35,7 @@ const PaystackIntegration = () => {
   return (
     <>
       <div className="flex flex-row">
-        <div className="bg-cover w-[50rem] h-[51.7rem] filter bg-[url('/public/Animation2.jpg')]"></div> 
+        <div className="bg-cover w-[50rem] h-[51.7rem] filter bg-[url('/Animation2.jpg')]"></div> 
         <div className="w-[50rem] flex justify-center">
           <div className="pt-[2rem] w-[45rem] shadow-2xl ml-[2rem] mt-[3rem] mb-[3rem] p-[2rem]">
             
