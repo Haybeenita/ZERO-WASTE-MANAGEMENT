@@ -3,7 +3,7 @@ import { authContext } from "../../../Providers/index.jsx";
 function Profile() {
   
   const {authUser} = useContext(authContext)
-  console.log(authUser)
+  console.log(authUser,'from profile')
   return (
     <div className="w-full p-6 mx-auto">
       <div className="flex flex-wrap -mx-3">
@@ -17,7 +17,7 @@ function Profile() {
                   alt="Bonnie image"
                 />
                 <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white capitalize">
-                  {authUser?.display_name}
+                  {authUser?.name}
                 </h5>
                 <span className="text-sm text-gray-500 dark:text-gray-400">
                  {authUser?.email}
