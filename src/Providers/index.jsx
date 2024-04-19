@@ -5,6 +5,7 @@ export const authContext = createContext({});
 const AuthProvider = ({ children }) => {
   // const navigate = useNavigate()
   const [authUser, setAuthUser] = useState({});
+  const [bookingDetails,setBookingDetails] = useState({})
   const [loading, setLoading] = useState(true);
  
   const shared = {
@@ -12,6 +13,8 @@ const AuthProvider = ({ children }) => {
     setAuthUser,
     loading,
     setLoading,
+    bookingDetails,
+    setBookingDetails,
   };
   return <authContext.Provider value={shared}>{children}</authContext.Provider>;
 };
