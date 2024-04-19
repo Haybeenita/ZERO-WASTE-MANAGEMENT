@@ -14,6 +14,7 @@ export const LogOut = () => {
   };
   const closeModalYes = () => {
     setShowModal(false);
+    localStorage.clear()
     navigate('/')
   };
 

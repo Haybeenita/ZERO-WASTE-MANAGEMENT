@@ -26,11 +26,11 @@ const Login = () => {
   // const headers = {
   //   "Content-Type": "multipart/form-data",
   // };
-  const signIn = (e) => {
+  const signIn = async (e) => {
     e.preventDefault();
     setLoading(true)
-    axios
-      .post(`${LoginApi}`, formData, { headers: {'Content-Type': 'multipart/form-data' }})
+    await axios
+      .post(`https://my-home-xlox.onrender.com/api/login`, formData, { headers: {'Content-Type': 'multipart/form-data' }})
       .then(function (response) {
         console.log(response, "response from db");
         // setUser(response.data);
@@ -38,9 +38,9 @@ const Login = () => {
         setLoading(false)
         const token = response.data.access_token;
         localStorage.setItem("token", token);
-        console.log(authUser,'auth user updated');
-        console.log(response.data,'data from db');
-        console.log(token,'usertoken updated');
+        // console.log(authUser,'auth user updated');
+        // console.log(response.data,'data from db');
+        // console.log(token,'usertoken updated');
         navigate("/dashboard");
       })
       .catch(function (error) {
