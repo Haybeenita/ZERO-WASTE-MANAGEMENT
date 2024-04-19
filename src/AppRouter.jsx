@@ -18,7 +18,7 @@ import PaystackIntegration from "./pages/Payment/PaystackIntegration.jsx";
 
 
 const router = createBrowserRouter([
-  { path: "/", element: <Home /> },
+  { path: "/", element: <Home/> },
   { path: "/Register", element: <Register/> },
   { path: "/Login", element: <Login/> },
   { path: "/admin", element:<Admindashboard/>},
