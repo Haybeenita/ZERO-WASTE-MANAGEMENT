@@ -1,4 +1,4 @@
-import React from "react";
+
 import axios from "axios";
 import { useState,useEffect } from "react";
 import { Bookingsorder } from "../../../BACKEND/Backend";
@@ -68,7 +68,7 @@ console.log(token);
             <tbody>
             {bookingDetails.map((book, index)=>{
               return (
-                <tr>
+                <tr key={index}>
                 <th>{index + 1}</th>
                 <td>{book.address}</td>
                 <td>{book.pickup_date}</td>

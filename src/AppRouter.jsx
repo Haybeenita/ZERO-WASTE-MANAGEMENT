@@ -15,7 +15,8 @@ import BookingPage from "./pages/dashboard/RequestPickup/RequestPickup.jsx";
 import Profile from "./pages/dashboard/Profile/Profile.jsx";
 import { LogOut } from "./pages/dashboard/Logout/LogOut.jsx";
 import PaystackIntegration from "./pages/Payment/PaystackIntegration.jsx";
-import ForgotPassword from "./components/Forgotpassword/Forgotpassword.jsx";
+// import {ForgotPasswordReset } from "./components/Forgotpassword/Forgotpassword.jsx";
+
 
 
 const router = createBrowserRouter([
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
   { path: "/Login", element: <Login/> },
   { path: "/admin", element:<Admindashboard/>},
   {path: "payment", element:<PaystackIntegration/>},
-  {path:"/verify", element:<ForgotPassword/>}
+  // {path:"/verify", element:<ForgotPasswordReset/>},
   
   {
     path: "/dashboard",

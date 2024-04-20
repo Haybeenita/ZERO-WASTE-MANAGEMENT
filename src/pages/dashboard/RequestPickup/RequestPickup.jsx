@@ -1,14 +1,12 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Input from "../../../components/Input";
 import Button from "../../../components/Buttons";
 import axios from "axios";
 import { booking } from "../../../BACKEND/Backend";
-import { useContext } from "react";
-import { authContext } from "../../../Providers/index.jsx";
+
 
 const BookingPage = () => {
-  const { bookingDetails, setBookingDetails,} = useContext(authContext)
   const [loading, setLoading] = useState(false);
  
 
