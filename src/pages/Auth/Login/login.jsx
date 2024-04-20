@@ -95,7 +95,7 @@ const Login = () => {
                     type="password"
                   />
                 </div>
-                <p className="hover:text-blue-700 underline hover:underline-offset-4 md:ml-[12rem] ml-[10rem] text-[#212122] md:font-medium font-normal mt-[1rem] ">
+                <p className="hover:text-blue-700 underline hover:underline-offset-4 md:ml-[10rem] ml-[8rem] text-[#212122] md:font-medium font-normal mt-[1rem] ">
                   Forgot password
                 </p>
                 <div className="flex justify-center md:mt-6 mt-4">

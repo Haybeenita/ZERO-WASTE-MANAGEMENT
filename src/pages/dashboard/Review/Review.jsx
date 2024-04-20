@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import { useContext } from "react";
+import { authContext } from "../../../Providers/index.jsx";
+import { Reviews } from "../../../BACKEND/Backend.js";
+import axios from "axios";
+
 // import { FaPen } from "react-icons/fa";
 
 export const Review = () => {
+  const [review, setReview] = useState("")
+  const {authUser} = useContext(authContext)
+  console.log(authUser,'from profile')
+
+  const handleInputChange = (event) => {
+    setReview(event.target.value);
+  };
+
+
+
+
   return (
     <div>
 
@@ -10,12 +26,13 @@ export const Review = () => {
         Reviews
       </h1>
       <p className="text-lg text-[#212122] font-bold mt-[1rem] ml-[2rem]">
-        <span className="text-zero-400">Hello User,</span>you can Leave your reviews here 👇🏽
+        <span className="text-zero-400">Hello {authUser?.display_name}, </span>you can Leave your reviews here 👇🏽
       </p>
       <textarea
         className="textarea textarea-bordered ml-[3rem] bg-zero-50 shadow-xl mt-[2rem] md:w-[45rem] w-[20rem] h-[15rem] lg:h-[25rem] text-[#212122] text-semibold"
         style={{ resize: "none", overflow: "auto" }}
         placeholder="Write a Message"
+        onCompositionStart={handleInputChange}
       >
       </textarea>
     </div>

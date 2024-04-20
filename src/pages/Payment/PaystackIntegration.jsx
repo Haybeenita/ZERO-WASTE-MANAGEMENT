@@ -35,7 +35,7 @@ const PaystackIntegration = () => {
   return (
     <>
       <div className="flex flex-row">
-        <div className="bg-cover w-[50rem] h-[51.7rem] filter bg-[url('/public/Animation2.jpg')]"></div> 
+        <div className="bg-cover w-[50rem] h-[51.7rem] filter bg-[url('/Animation2.jpg')]"></div> 
         <div className="w-[50rem] flex justify-center">
           <div className="pt-[2rem] w-[45rem] shadow-2xl ml-[2rem] mt-[3rem] mb-[3rem] p-[2rem]">
             
@@ -44,7 +44,7 @@ const PaystackIntegration = () => {
             </h3>
             <form id="paymentForm" onSubmit={payWithPayStack}>
               <div className="">
-                <label for="email" className="text-[#212122]">Email Address</label>
+                <label htmlFor="email" className="text-[#212122]">Email Address</label>
                 <input
                   type="email"
                   value={email}
@@ -55,7 +55,7 @@ const PaystackIntegration = () => {
                 />
               </div>
               <div className="text-[#212122]">
-                <label for="amount" className="text-[#212122]">Amount</label>
+                <label htmlFor="amount" className="text-[#212122]">Amount</label>
                 <input
                   type="tel"
                   id="amount"
@@ -66,7 +66,7 @@ const PaystackIntegration = () => {
                 />
               </div>
               <div className="">
-                <label for="first-name" className="text-[#212122]">First Name</label>
+                <label htmlFor="first-name" className="text-[#212122]">First Name</label>
                 <input
                   type="text"
                   className="w3-input bg-transparent  border-2 border-zero-200"
@@ -76,7 +76,7 @@ const PaystackIntegration = () => {
                 />
               </div>
               <div className="">
-                <label for="last-name" className="text-[#212122]">Last Name</label>
+                <label htmlFor="last-name" className="text-[#212122]">Last Name</label>
                 <input
                   type="text"
                   className="w3-input bg-transparent  border-2  border-zero-200"
@@ -89,7 +89,7 @@ const PaystackIntegration = () => {
                 <button
                   className="text-white mx-auto mt-[5rem] mb-[2rem] h-[3rem] w3-block bg-zero-500 rounded-md w-[10rem]"
                   type="submit"
-                  onclick="payWithPaystack()"
+                  onClick="payWithPaystack()"
                 >
                   Pay
                 </button>

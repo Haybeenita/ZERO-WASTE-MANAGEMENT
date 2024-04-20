@@ -2,22 +2,22 @@ import { FaHome } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { authContext } from "../../Providers/index.jsx";
-const DashboardHeader = ({title = "Dashboard", handleToggle = () => {} }) => {
+const DashboardHeader = ({title = "", handleToggle = () => {} }) => {
   const {authUser} = useContext(authContext)
   return (
-    <nav className="flex flex-wrap items-center px-0 transition-all shadow-lg duration-250 ease-soft-in lg:flex-nowrap lg:justify-start sticky top-0">
+    <nav className="flex flex-wrap items-center px-0 transition-all shadow-md 0px 3px 8px; duration-250 ease-soft-in lg:flex-nowrap lg:justify-start sticky top-0">
       <div className="flex items-center justify-between w-full px-4 py-1 mx-auto flex-wrap-inherit">
         <nav>
           <ol className="flex flex-wrap pt-1 mr-12 bg-transparent rounded-lg sm:mr-16">
-            <li className="leading-normal text-sm breadcrumb-item">
+            {/* <li className="leading-normal text-sm breadcrumb-item">
               <Link
                 className="text-slate-700 opacity-30 dark:text-white"
                 to={"/user"}
               >
                 <FaHome width="12px" height="12px" />
               </Link>
-            </li>
-            <li className="text-sm pl-2 leading-normal before:float-left before:pr-2 before:text-gray-600 before:content-['/']">
+            </li> */}
+            {/* <li className="text-sm pl-2 leading-normal before:float-left before:pr-2 before:text-gray-600 before:content-['/']">
               <a
                 className="opacity-50 text-slate-700 dark:text-white"
                 href="javascript:;"
@@ -30,8 +30,8 @@ const DashboardHeader = ({title = "Dashboard", handleToggle = () => {} }) => {
               aria-current="page"
             >
               User
-            </li>
-            <li className="xl:flex hidden gap-2 xl:ml-[53rem] mt-[1rem]">
+            </li> */}
+            <li className="xl:flex hidden gap-2 xl:ml-[62rem] my-[0.5rem]">
             
               <svg
                 xmlns="http://www.w3.org/2000/svg"
