@@ -22,12 +22,12 @@ function DashboardSidebar() {
         className="fixed left-100% top-0 bottom-0 inset-y-0 md-left-0 flex-wrap items-center justify-between block w-full overflow-y-auto transition-all duration-200 -translate-x-full bg-white shadow-xl border-0 xl:ml-4 dark:bg-gray-950 ease-in-out z-990 max-w-64 rounded-2xl xl:translate-x-0 xl:bg-transparent"
         id="sidenav-main"
       >
-        <div className="h-20">
+        <div className="h-[3.75rem]">
           <i
             className="absolute top-0 right-0 p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 dark:text-white xl:hidden"
             aria-hidden="true"
           />
-          <Link to='/' className="block px-8 py-6 m-0 text-sm whitespace-nowrap text-slate-700 dark:text-white"
+          <Link to='/' className="block px-8 py-4 m-0 text-sm whitespace-nowrap text-slate-700 dark:text-white"
             > <Link/>
             <img
               src={logo}
@@ -46,7 +46,7 @@ function DashboardSidebar() {
         </div>
         <hr className="h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent dark:bg-gradient-to-r dark:from-transparent dark:via-white dark:to-transparent" />
         <div
-          className="items-center block w-full h-auto grow basis-full"
+          className="items-center mt-[1.2rem] block w-full h-auto grow basis-full"
           id="sidenav-collapse-main"
         >
           <ul className="flex flex-col pl-0 mb-0 list-none">
@@ -97,7 +97,7 @@ const SidebarLinkComponent = ({
 
 const LowerSidebarlinkComponent = () => {
   return (
-    <div>
+    <div className="">
       <SidebarLink to="/dashboard/setting">
         <i className={`${styles.icon} stroke-none shadow-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center fill-current p-2.5 text-center text-black`}>
           <FaHome width="12px" height="12px" />

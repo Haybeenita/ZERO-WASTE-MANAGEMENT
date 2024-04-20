@@ -49,7 +49,7 @@ console.log(token);
   return (
     <>
     {
-      loading? <span class="loader2"></span>
+      loading? <span className="loader2"></span>
       : authUser?
      <> {children}</>
       :
