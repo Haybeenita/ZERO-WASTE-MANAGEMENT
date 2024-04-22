@@ -41,3 +41,7 @@ html {
     transform: rotate(360deg);
   }
 }
+
+logout {
+  background: black;
+}

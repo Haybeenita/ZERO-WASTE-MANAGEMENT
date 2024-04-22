@@ -20,7 +20,7 @@ export const LogOut = () => {
 
   return (
     <>
-    <div className="w-full p-6 mx-auto lg:max-w-full max-w-[5rem] px-3 lg:flex-0 shrink-0 relative">
+    <div className="w-full p-6 mx-auto lg:max-w-full max-w-[5rem] px-3 lg:flex-0 shrink-0 relative ">
       {showModal && (
         <div className="bg-white shadow-2xl h-[15rem] w-[10rem] lg:w-[25rem] rounded-2xl mx-auto">
           <h3 className="text-lg text-center text-[#212122] font-bold item pt-8">
