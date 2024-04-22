@@ -4,22 +4,16 @@ import Input from "../../../components/Input";
 import Button from "../../../components/Buttons";
 import axios from "axios";
 import { booking } from "../../../BACKEND/Backend";
-
+import { useContext } from "react";
+import { authContext } from "../../../Providers";
+import { getPrice } from "../../../utils";
 
 const BookingPage = () => {
   const [loading, setLoading] = useState(false);
- 
+ const {formFilled, setFormFilled} = useContext(authContext)
 
   const navigate = useNavigate();
-  const [paymentForm, setPaymentForm] = useState({});
-  const [formFilled, setFormFilled] = useState({
-    first_name: "",
-    last_name: "",
-    phone: "",
-    address: "",
-    pickup_date: "",
-    waste_type: "",
-  });
+  // const [paymentForm, setPaymentForm] = useState({});
 
   const handleInputChange = (e) => {
     setFormFilled({
@@ -35,14 +29,14 @@ const BookingPage = () => {
     setLoading(true);
     axios
       .post(`${booking}`,{
- 
+
         first_name: formFilled.first_name,
         last_name: formFilled.last_name,
         phone: formFilled.phone,
         address: formFilled.address,
         pickup_date: formFilled.pickup_date,
         waste_type: formFilled.waste_type,
-        order_status: "PENDING",
+        amount: getPrice(formFilled)
       },{headers:{
         accept:'application/json',
         Authorization: `Bearer ${token}`,
@@ -50,20 +44,18 @@ const BookingPage = () => {
       },})
       .then(function (response) {
         console.log(response, "response from db");
-        setPaymentForm(response.data);
-
         setLoading(false);
         navigate("/payment")
-        // Navigate to some page after successful booking
-        // You might need to import 'navigate' from your router library
-        // navigate("/login");
       })
       .catch(function (error) {
         console.log(error, "error from db");
-        setPaymentForm(error.data);
+        // setPaymentForm(error.data);
         setLoading(false);
       });
   };
+
+
+
 
   return (
     <div className=" lg:w-[60rem] md:w-[40rem] w-[20rem] flex flex-col m-auto relative mt-[3rem] shadow-xl lg:h-[35rem] items-center pt-[2rem]">
@@ -133,7 +125,7 @@ const BookingPage = () => {
             name="address"
             value={formFilled.address}
           />
-          <div className="flex items-center lg:gap-0 gap-1 lg:ml-[10rem]">
+          <div className="flex items-center justify-between lg:gap-0 gap-1 ">
             <label className="text-black font-medium lg:w-[10rem] lg:text-[16px] text-sm lg:mr-[2rem]">
               PickUp Date
               <Input
@@ -156,12 +148,12 @@ const BookingPage = () => {
               <option disabled value="" className="font-semibold text-md">
                 Type of Waste
               </option>
-              <option value="Organic waste">Organic waste</option>
-              <option value="Plastics">Plastics</option>
-              <option value="Medical waste">Medical waste</option>
-              <option value="Biodegradable waste">Biodegradable waste</option>
-              <option value="Industrial waste">Industrial waste</option>
+              <option value="Organic">Organic</option>
+              <option value="Plastic">Plastic </option>
+              <option value="Medical">Medical </option>
+              <option value="Industrial">Industrial</option>
             </select>
+            <p className="font-medium text-2xl">Amount:{getPrice(formFilled)}</p>
           </div>
           <div className="flex justify-center mt-4 font-bold">
             <Button type="submit" variant="primary" size="large" isDisabled={loading}>

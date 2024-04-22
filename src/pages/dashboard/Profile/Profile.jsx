@@ -2,8 +2,8 @@ import { useContext } from "react";
 import { authContext } from "../../../Providers/index.jsx";
 function Profile() {
   
-  const {authUser} = useContext(authContext)
-  console.log(authUser,'from profile')
+  const {authUser,bookingDetails} = useContext(authContext)
+  console.log(bookingDetails,'from profile')
   return (
     <div className="w-full p-6 mx-auto">
       <div className="flex flex-wrap -mx-3">
@@ -56,7 +56,7 @@ function Profile() {
                           Default Address:
                         </h3>
                         <p className="text-sm font-medium text-gray-900 truncate dark:text-white mt-[1rem]">
-                          No1 Alice avenue independence Layout Enugu
+                         {bookingDetails[0].address}
                         </p>
                         <a
                           href="#"

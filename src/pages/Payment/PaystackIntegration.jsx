@@ -1,18 +1,22 @@
 import React from "react";
 import { useState } from "react";
+import { useContext } from "react";
+import { authContext } from "../../Providers";
 import PaystackPop from "@paystack/inline-js";
+import { getPrice } from "../../utils";
 
 const PaystackIntegration = () => {
+  const {formFilled, setFormFilled,bookingDetails} = useContext(authContext)
   const [email, setEmail] = useState("");
-  const [amount, setAmount] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lasttName, setLastName] = useState("");
+  console.log(getPrice(formFilled),'price');
   const payWithPayStack = (e) => {
     e.preventDefault();
     const payStack = new PaystackPop();
     payStack.newTransaction({
       key: "pk_test_907eb64312b409f14c9d14559c314ff3aaf6554e",
-      amount: amount * 100,
+      amount: getPrice(formFilled) * 100,
       email,
       firstName,
       lasttName,
@@ -55,7 +59,7 @@ const PaystackIntegration = () => {
                 />
               </div>
               <div className="text-[#212122]">
-                <label htmlFor="amount" className="text-[#212122]">Amount</label>
+                {/* <label htmlFor="amount" className="text-[#212122]">Amount</label>
                 <input
                   type="tel"
                   id="amount"
@@ -63,7 +67,7 @@ const PaystackIntegration = () => {
                   onChange={(e) => setAmount(e.target.value)}
                   className="w3-input border-2 border-zero-200 bg-transparent"
                   required
-                />
+                /> */}
               </div>
               <div className="">
                 <label htmlFor="first-name" className="text-[#212122]">First Name</label>
@@ -85,6 +89,7 @@ const PaystackIntegration = () => {
                   onChange={(e) => setLastName(e.target.value)}
                 />
               </div>
+              <p className="mt-[1rem] text-2xl">Amount:{getPrice(formFilled)}</p>
               <div className="">
                 <button
                   className="text-white mx-auto mt-[5rem] mb-[2rem] h-[3rem] w3-block bg-zero-500 rounded-md w-[10rem]"

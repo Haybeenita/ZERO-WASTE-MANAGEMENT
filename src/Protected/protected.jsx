@@ -11,7 +11,7 @@ const ProtectedRoute = ({ children }) => {
 
 
   const token = localStorage.getItem('token')
-console.log(token);
+// console.log(token);
 
   useEffect(()=>{
     // console.log(authUser,'authuser from profile')
@@ -24,10 +24,10 @@ console.log(token);
         })
        .then(function (response) {
       // handle success
-      console.log(response, 'response from user profile ');
+      // console.log(response, 'response from user profile ');
       setAuthUser(response.data)
       setLoading(false)
-      console.log(authUser)
+      // console.log(authUser)
       })
      .catch(function (error) {
       // handle error

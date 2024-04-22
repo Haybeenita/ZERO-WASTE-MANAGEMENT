@@ -1,5 +1,8 @@
 import { useState } from "react";
 // import {useNavigate} from "react-router-dom"
+import React from 'react';
+import { ToastContainer, toast, Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Button from "../../../components/Buttons";
 import Input from "../../../components/Input";
 import axios from "axios";
@@ -18,7 +21,33 @@ const Register = () => {
     phonenumber: "",
     username: "",
   });
-
+  // const notify = () => toast("Wow so easy!");
+    // const notifySucces=()=>toast.success('🦄 Registration Succesful!', {
+    //   position: "top-center",
+    //   autoClose: 5000,
+    //   hideProgressBar: false,
+    //   closeOnClick: true,
+    //   pauseOnHover: true,
+    //   draggable: true,
+    //   progress: undefined,
+    //   theme: "light",
+    //   transition: Slide,
+    //   });
+      // const errorToast = () => {
+      //   toast.error('🦄 Wow so easy!', {
+      //     position: "top-center",
+      //     autoClose: 5000,
+      //     hideProgressBar: false,
+      //     closeOnClick: true,
+      //     pauseOnHover: true,
+      //     draggable: true,
+      //     progress: undefined,
+      //     theme: "light",
+      //     transition: Bounce,
+      //     });
+      // };
+      
+  
   const signUp = (e) => {
     setLoading(true);
     e.preventDefault();
@@ -34,12 +63,14 @@ const Register = () => {
         setAuthUser(response.data);
         console.log(authUser,'from register')
         setLoading(false);
+        // notifySucces()
         navigate("/login");
       })
       .catch(function (error) {
         setUser(error.data);
         console.log(error, "error from db");
         setLoading(false);
+        // errorToast()
       });
   };
   const handleInputChange = (e) => {
@@ -126,7 +157,32 @@ const Register = () => {
                   >
                     {loading ? <span className="loader" /> : "Register"}
                   </Button>
-                
+                  {/* <ToastContainer
+                      position="top-right"
+                      autoClose={5000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                      theme="light"
+                      transition={Bounce}
+                    /> */}
+                   {/* <ToastContainer
+                        position="top-center"
+                        autoClose={5000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="light"
+                        transition={Bounce}
+                      /> */}
                 </div>
                 <div className="">
                   <p className="mt-2 text-[#212122] font-medium text-md md:ml-[3.5rem] ml-[1.5rem] ">Already have an Account? <span className="text-[#0E5808] underline cursor-pointer"><Link to="/login">Sign in</Link></span></p>
