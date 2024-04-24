@@ -8,10 +8,13 @@ import { GoogleLogin } from "../../../Firebase/Firebase.jsx";
 import { LoginApi } from "../../../BACKEND/Backend.js";
 import { useContext } from "react";
 import { authContext } from "../../../Providers/index.jsx";
+import { ForgotPasswordReset } from "../../../components/Forgotpassword/VerifyEmail.jsx";
 
 const Login = () => {
   const [loading,setLoading]= useState(false)
+  const[showReset,setResetPassword] = useState(false)
   const {authUser,setAuthUser} = useContext(authContext)
+  
 
   const navigate = useNavigate();
   const [user, setUser] = useState({});

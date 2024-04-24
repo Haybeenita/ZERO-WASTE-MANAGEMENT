@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useState } from "react";
 import { useContext } from "react";
 import { authContext } from "../../Providers";
@@ -6,17 +6,20 @@ import PaystackPop from "@paystack/inline-js";
 import { getPrice } from "../../utils";
 
 const PaystackIntegration = () => {
-  const {formFilled, setFormFilled,bookingDetails} = useContext(authContext)
-  const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lasttName, setLastName] = useState("");
-  console.log(getPrice(formFilled),'price');
+  const { authUser,bookingform } = useContext(authContext);
+  const [email, setEmail] = useState(authUser.email);
+  const [firstName, setFirstName] = useState(authUser.first_name);
+  const [lasttName, setLastName] = useState(authUser.last_name);
+  console.log(getPrice(bookingform),'price');
+ 
   const payWithPayStack = (e) => {
     e.preventDefault();
     const payStack = new PaystackPop();
+
+
     payStack.newTransaction({
       key: "pk_test_907eb64312b409f14c9d14559c314ff3aaf6554e",
-      amount: getPrice(formFilled) * 100,
+      amount: getPrice(bookingform) * 100,
       email,
       firstName,
       lasttName,
@@ -29,7 +32,7 @@ const PaystackIntegration = () => {
         setEmail("");
         setFirstName("");
         setLastName("");
-        setAmount("");
+        // setAmount("");
       },
       oncancel() {
         alert("You have cancelled the transaction");
@@ -89,7 +92,7 @@ const PaystackIntegration = () => {
                   onChange={(e) => setLastName(e.target.value)}
                 />
               </div>
-              <p className="mt-[1rem] text-2xl">Amount:{getPrice(formFilled)}</p>
+              <p className="mt-[1rem] text-2xl">Amount:{getPrice(bookingform)}</p>
               <div className="">
                 <button
                   className="text-white mx-auto mt-[5rem] mb-[2rem] h-[3rem] w3-block bg-zero-500 rounded-md w-[10rem]"

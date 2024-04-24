@@ -9,7 +9,8 @@ import { BiSolidOffer } from "react-icons/bi";
 import { ImTruck } from "react-icons/im";
 import { Link } from "react-router-dom";
 import { FiLogOut } from "react-icons/fi";
-
+import { useContext } from "react";
+import { authContext } from "../../Providers";
 
 
 function DashboardSidebar() {
@@ -19,16 +20,20 @@ function DashboardSidebar() {
   return (
     <>
       <aside
-        className="fixed left-100% top-0 bottom-0 inset-y-0 md-left-0 flex-wrap items-center justify-between block w-full overflow-y-auto transition-all duration-200 -translate-x-full bg-white shadow-xl border-0 xl:ml-4 dark:bg-gray-950 ease-in-out z-990 max-w-64 rounded-2xl xl:translate-x-0 xl:bg-transparent"
+        className="fixed left-100% top-0 bottom-0 inset-y-0 md-left-0 flex-wrap items-center justify-between block w-full overflow-y-auto transition-all duration-200 -translate-x-full bg-white shadow-xl border-0 xl:ml-4 ease-in-out z-990 max-w-64 rounded-2xl xl:translate-x-0 xl:bg-transparent"
         id="sidenav-main"
       >
         <div className="h-[3.75rem]">
           <i
-            className="absolute top-0 right-0 p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 dark:text-white xl:hidden"
+            className="absolute top-0 right-0 p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 xl:hidden"
             aria-hidden="true"
           />
-          <Link to='/' className="block px-8 py-4 m-0 text-sm whitespace-nowrap text-slate-700 dark:text-white"
-            > <Link/>
+          <Link
+            to="/"
+            className="block px-8 py-4 m-0 text-sm whitespace-nowrap text-slate-700 "
+          >
+            {" "}
+            <Link />
             <img
               src={logo}
               className="inline-block h-full max-w-full transition-all duration-200 ease-in-out max-h-8 dark:hidden"
@@ -96,10 +101,16 @@ const SidebarLinkComponent = ({
 };
 
 const LowerSidebarlinkComponent = () => {
+  const { toggleModal } = useContext(authContext);
+  const test = () => {
+    console.log("i am button");
+  };
   return (
     <div className="">
       <SidebarLink to="/dashboard/setting">
-        <i className={`${styles.icon} stroke-none shadow-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center fill-current p-2.5 text-center text-black`}>
+        <i
+          className={`${styles.icon} stroke-none shadow-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center fill-current p-2.5 text-center text-black`}
+        >
           <FaHome width="12px" height="12px" />
         </i>
         <span className="ml-1 duration-300 opacity-100 pointer-events-none ease text-slate-700">
@@ -107,10 +118,17 @@ const LowerSidebarlinkComponent = () => {
         </span>
       </SidebarLink>
       <SidebarLink to="/dashboard/logout">
-        <i className={`${styles.icon} stroke-none shadow-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center fill-current p-2.5 text-center text-black`}>
-        <FiLogOut />
+        <i
+          className={`${styles.icon} stroke-none shadow-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center fill-current p-2.5 text-center text-black`}
+        >
+          <FiLogOut />
         </i>
-        <p  className="ml-1 duration-300 opacity-100 pointer-events-none ease text-slate-700">Logout</p>
+        <button onClick={toggleModal}
+         
+          className="ml-1 duration-300 opacity-100  ease text-slate-700"
+        >
+          Logout
+        </button>
       </SidebarLink>
     </div>
   );
@@ -124,22 +142,22 @@ const SidebarLinkData = [
   },
   {
     path: "/dashboard/orders",
-    icon: <LuPackage2 className="w-6 h-6"  />,
+    icon: <LuPackage2 className="w-6 h-6" />,
     text: "Orders",
   },
   {
     path: "/dashboard/review",
-    icon: <MdOutlineReviews className="w-6 h-6"  />,
+    icon: <MdOutlineReviews className="w-6 h-6" />,
     text: "Review",
   },
   {
     path: "/dashboard/offers",
-    icon: <BiSolidOffer className="w-6 h-6"  />,
+    icon: <BiSolidOffer className="w-6 h-6" />,
     text: "Offers",
   },
   {
     path: "/dashboard/request",
-    icon: <ImTruck className="w-6 h-6"  />,
+    icon: <ImTruck className="w-6 h-6" />,
     text: "Request Pickup",
   },
 ];

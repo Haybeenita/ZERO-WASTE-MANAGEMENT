@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import { authContext } from "../Providers";
 import { Navigate } from "react-router-dom";
-import { Outlet } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
 import { useEffect,useState } from "react";
 import { profile } from "../BACKEND/Backend";
 import axios from 'axios'
 const ProtectedRoute = ({ children }) => {
-  const { authUser,setAuthUser } = useContext(authContext);
+  const { authUser,setAuthUser,setBookingForm} = useContext(authContext);
   let [loading,setLoading] = useState(true)
 
 
@@ -26,6 +26,12 @@ const ProtectedRoute = ({ children }) => {
       // handle success
       // console.log(response, 'response from user profile ');
       setAuthUser(response.data)
+      setBookingForm({
+        first_name:response.data?.first_name,
+        last_name:response.data?.last_name,
+        email:response.data?.email,
+        phone:response.data?.phone_number,
+      })
       setLoading(false)
       // console.log(authUser)
       })

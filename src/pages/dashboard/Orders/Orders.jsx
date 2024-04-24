@@ -4,13 +4,24 @@ import { useState,useEffect } from "react";
 import { Bookingsorder } from "../../../BACKEND/Backend";
 import { useContext } from "react";
 import { authContext  } from "../../../Providers";
-// const {authUser,setAuthUser} = useContext(authContext)
-// const [loading, setLoading] = useState(false);
+
 const Order = () => {
+  const [checkedIds,setCheckedIds] = useState(localStorage.getItem("pickup")??[])
+  const handleCheck = (id,value) => {
+    if(!checkedIds.includes(id)){
+      setCheckedIds([...checkedIds, id]); 
+    }
+  };
+  const isChecked = (id) => {
+    return checkedIds.includes(id); // Check if the ID is in the checked IDs array
+  };
+useEffect (()=>{
+  localStorage.setItem("pickup", checkedIds);
+},[checkedIds])
+  
 const {bookingDetails,setBookingDetails} = useContext(authContext )
 const token = localStorage.getItem('token')
-// console.log(token);
-
+const status='succesfull'
   useEffect(()=>{
     if(token){
         axios.get(`${Bookingsorder}`,{
@@ -34,12 +45,9 @@ const token = localStorage.getItem('token')
        });
        return
     }
-    // setBookingDetails('')
   },[])
-  // useEffect(() => {
-  //   console.log(bookingDetails, 'my booking details');
-  // }, [bookingDetails]);
   const totalOrders = bookingDetails.length;
+
   return (
     <div>
       <div className="flex lg:ml-[2rem] ml-[0.5rem] mr-[0.5rem] gap-2 lg:gap-[4rem] mt-[2rem] relative">
@@ -49,11 +57,7 @@ const token = localStorage.getItem('token')
         </div>
         <div className="lg:w-[14rem] w-[12rem] h-[6rem]  border-2 bg-zero-200 border-zero-300 lg:text-xl text-sm font-semibold rounded-2xl pt-[0.5rem] text-[#212122] flex flex-col">
           <span className="lg:ml-[1rem] ml-[0.3rem]">Total Pickups:</span>
-          <span className="font-bold w-[5rem] mt-[0.5rem] lg:text-4xl text-2xl lg:ml-[2rem] ml-[1rem]">0</span>
-        </div>
-        <div className="lg:w-[14rem] w-[12rem] h-[6rem]  border-2 bg-zero-200 border-zero-300 lg:text-xl text-sm font-semibold rounded-2xl pt-[0.5rem] text-[#212122] flex flex-col">
-          <span className="lg:ml-[1rem] ml-[0.2rem]">Total Expenditure:</span>
-          <span className="mt-[0.5rem] lg:text-4xl text-2xl lg:ml-[2rem] ml-[0.5rem] font-bold">#2000</span>
+          <span className="font-bold w-[5rem] mt-[0.5rem] lg:text-4xl text-2xl lg:ml-[2rem] ml-[1rem]">{checkedIds.length}</span>
         </div>
       </div>
 
@@ -70,6 +74,7 @@ const token = localStorage.getItem('token')
                 <th>Address</th>
                 <th>Date</th>
                 <th>Status</th>
+                <th className="w-[12rem]">verify pickup</th>
               </tr>
             </thead>
             <tbody>
@@ -79,7 +84,13 @@ const token = localStorage.getItem('token')
                 <th>{index + 1}</th>
                 <td>{book.address}</td>
                 <td>{book.pickup_date}</td>
-                <td>{book.order_status}</td>
+                <td> {status}</td>
+                {
+                  status==='succesfull'? <td ><input 
+                  
+                  onChange={(e) => handleCheck(index,e.target.value)} checked={isChecked(index)} disabled={isChecked(index)} className="bg-red-500" type='checkbox' style={{color: 'red'}}/></td>: ''
+                }
+                
               </tr>
               )
             })}
