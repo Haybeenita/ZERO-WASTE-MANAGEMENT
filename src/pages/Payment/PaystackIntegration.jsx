@@ -1,32 +1,53 @@
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { authContext } from "../../Providers";
 import PaystackPop from "@paystack/inline-js";
 import { getPrice } from "../../utils";
+import axios from "axios";
+import { VerifyPayment } from "../../BACKEND/Backend";
 
 const PaystackIntegration = () => {
-  const { authUser,bookingform } = useContext(authContext);
+  const { authUser,bookingform, processingBooking, } = useContext(authContext);
   const [email, setEmail] = useState(authUser.email);
   const [firstName, setFirstName] = useState(authUser.first_name);
   const [lasttName, setLastName] = useState(authUser.last_name);
   console.log(getPrice(bookingform),'price');
+
+  const navigate = useNavigate()
  
   const payWithPayStack = (e) => {
+    console.log("paybooking",processingBooking);
+  
     e.preventDefault();
+
     const payStack = new PaystackPop();
 
 
     payStack.newTransaction({
       key: "pk_test_907eb64312b409f14c9d14559c314ff3aaf6554e",
       amount: getPrice(bookingform) * 100,
+      ref:processingBooking.id.toString(),
       email,
       firstName,
       lasttName,
-      onSucess(transaction) {
+      onSuccess(transaction) {
         let message = `Payment complete! Reference ${transaction.reference}`;
         console.log(message);
+        axios.post(`${VerifyPayment}${transaction.reference}`)
+        .then(function (response) {
+          console.log(response,'sucess response');
+          navigate('dashboard/orders', { replace: true });
+        })
+        .catch(function (error) {
+          console.log(error,'error response');
+          navigate('/orders', { replace: true });
+        });
+
+        
         alert(message);
+        navigate('dashboard/orders', { replace: true });
         alert("success");
 
         setEmail("");
@@ -36,15 +57,16 @@ const PaystackIntegration = () => {
       },
       oncancel() {
         alert("You have cancelled the transaction");
+        navigate('/dashboard/orders', { replace: true });
       },
     });
   };
   return (
     <>
       <div className="flex flex-row">
-        <div className="bg-cover w-[50rem] h-[51.7rem] filter bg-[url('/Animation2.jpg')]"></div> 
-        <div className="w-[50rem] flex justify-center">
-          <div className="pt-[2rem] w-[45rem] shadow-2xl ml-[2rem] mt-[3rem] mb-[3rem] p-[2rem]">
+        <div className="bg-cover xl:w-[50rem] w-auto lg:h-[51.7rem] filter lg:bg-[url('/Animation2.jpg')]  "></div> 
+        <div className="lg:w-[50rem] mx-auto w-auto flex justify-center">
+          <div className="pt-[2rem] lg:w-[45rem] w-[25rem] mx-auto shadow-2xl lg:ml-[2rem] mt-[3rem] mb-[3rem] p-[2rem]">
             
           <h3 className=" text-3xl font-bold py-[1rem] flex justify-center text-[#212122]">
               Make Payments

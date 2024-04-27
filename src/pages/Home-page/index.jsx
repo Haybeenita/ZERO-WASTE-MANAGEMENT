@@ -1,5 +1,4 @@
 /* eslint-disable react/no-unknown-property */
-import React from "react";
 import styles from "./homepage.module.css";
 import { NavLinks, NavBar } from "../../components/Nav1";
 import Footer from "../../components/footer";
@@ -17,7 +16,7 @@ const Home = () => {
         aos-delay="100"
       >
         <div className={styles["hero-overlay"]}></div>
-        <h1>
+        <h1 className="">
           Sustainable Waste <span>Solutions for Every </span>
           <span>Environment</span>
         </h1>
@@ -70,7 +69,7 @@ const Home = () => {
           <img
             src="src\assets\images\Rectangle 6.png"
             alt=""
-            className="rounded-[10px]"
+            className={styles.review1}
           />
           <img
             className={styles.review}

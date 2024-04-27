@@ -103,3 +103,76 @@
 .example{
     width:300px;
 }
+
+@media only screen and (max-width:420px){
+    .footer{
+        background-color:#0E5808;
+        padding:15px;
+        margin-top: 66px;
+    }
+    .footerNav{
+        width:370.35px;
+        flex-direction: column;
+        margin: 0 20px ;
+        padding:10px 14px 10px 18px ;
+        align-items: start;
+
+    }
+    .signup p{
+        font-size:12px;
+        
+       
+    }
+    .msg{
+       width: 18px;
+       height: 18px;
+        
+    }
+    .signup,.btns{
+        margin-top: 5px;
+        
+    }
+    .content{
+        flex-direction: column;
+      
+}
+.contentsOne{
+    display:flex; 
+    justify-content: space-between;
+   
+    /* flex-direction: column; */
+}
+.contentsOne >*+*{
+    margin-top: 5px;
+    margin-left: 0px;
+}
+.company{
+    width:auto;
+    font-size:13px;
+    /* margin-right:125.71px; */
+ }
+ .company h6{
+    padding-top: 40px;
+ }
+ .aboutUs p{
+    font-size:13px;
+    color:#fff;
+    width:auto;
+}
+.title{
+    font-size:16px;
+    color:#fff;
+    padding:10px 0 10px 0; 
+}
+.company >*+*{
+    padding-bottom:10px;
+}
+.msg2{
+    height:20px;
+    width: 20px;
+}
+.contentTwo > *+*{
+    padding-bottom:10px;
+    font-size: 13px;
+}
+}

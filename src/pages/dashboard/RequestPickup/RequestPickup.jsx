@@ -10,15 +10,13 @@ import { getPrice } from "../../../utils";
 
 const BookingPage = () => {
   const [loading, setLoading] = useState(false);
-  const {bookingform,setBookingForm } = useContext(authContext);
+  const {bookingform,setBookingForm,setProcessingBooking } = useContext(authContext);
   console.log(bookingform)
   // const { formFilled, setFormFilled } = useContext(authContext);
   
   
 
   const navigate = useNavigate();
-  // const [paymentForm, setPaymentForm] = useState({});
-
   const handleInputChange = (e) => {
     setBookingForm({
       ...bookingform,
@@ -56,6 +54,11 @@ const BookingPage = () => {
       .then(function (response) {
         console.log(response, "response from db");
         setLoading(false);
+         console.log(" bookingggggg",response.data.booking)
+        setProcessingBooking(response.data.booking)
+
+
+
         navigate("/payment");
       })
       .catch(function (error) {
@@ -133,7 +136,7 @@ const BookingPage = () => {
             name="address"
             value={bookingform.address}
           />
-          <div className="flex items-center justify-between lg:gap-0 gap-1 ">
+          <div className="flex items-center justify-between lg:gap-0 gap-1 flex-col lg:flex-row">
             <label className="text-black font-medium lg:w-[10rem] lg:text-[16px] text-sm lg:mr-[2rem]">
               PickUp Date
               <Input
@@ -147,6 +150,7 @@ const BookingPage = () => {
                 value={bookingform.pickup_date}
               />
             </label>
+
             <select
               className="select w-full lg:max-w-xs max-w-xs text-xs items-center bg-zero-100"
               onChange={handleInputChange}
@@ -161,7 +165,7 @@ const BookingPage = () => {
               <option value="Medical">Medical </option>
               <option value="Industrial">Industrial</option>
             </select>
-            <p className="font-medium text-2xl">
+            <p className="font-medium lg:text-2xl text-lg">
               Amount:{getPrice(bookingform)}
             </p>
           </div>

@@ -5,25 +5,32 @@ import styles from "../dashboard/nav-link.module.css";
 import PropType from "prop-types";
 import { LuPackage2 } from "react-icons/lu";
 import { MdOutlineReviews } from "react-icons/md";
-import { BiSolidOffer } from "react-icons/bi";
+// import { BiSolidOffer } from "react-icons/bi";
 import { ImTruck } from "react-icons/im";
 import { Link } from "react-router-dom";
 import { FiLogOut } from "react-icons/fi";
 import { useContext } from "react";
 import { authContext } from "../../Providers";
+import { classNames, sizes } from "../../utils";
 
-
-function DashboardSidebar() {
+function DashboardSidebar({ isOpen = true, closeSidebar = () => {} }) {
+  const sidebarclass = isOpen ? "translate-x-0" : "hidden";
   const sidebarLinks = SidebarLinkData.map(({ icon, path, text }) => (
     <SidebarLinkComponent key={text} path={path} icon={icon} text={text} />
   ));
   return (
     <>
       <aside
-        className="fixed left-100% top-0 bottom-0 inset-y-0 md-left-0 flex-wrap items-center justify-between block w-full overflow-y-auto transition-all duration-200 -translate-x-full bg-white shadow-xl border-0 xl:ml-4 ease-in-out z-990 max-w-64 rounded-2xl xl:translate-x-0 xl:bg-transparent"
+        className={classNames(
+          "fixed left-100% top-0 bottom-0 inset-y-0 md-left-0 flex-wrap items-center",
+          "justify-between block w-full overflow-y-auto transition-all duration-200 -translate-x-full bg-white z-100",
+          "shadow-xl border-0 xl:ml-4 ease-in-out z-990 max-w-64 rounded-2xl xl:translate-x-0 xl:bg-transparent",
+          window.innerWidth < sizes.laptopL ? sidebarclass:""
+        )}
         id="sidenav-main"
+        style={{ zIndex:999999}}
       >
-        <div className="h-[3.75rem]">
+        <div className="xl:h-[3.75rem] h-[2.855rem]">
           <i
             className="absolute top-0 right-0 p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 xl:hidden"
             aria-hidden="true"
@@ -57,7 +64,7 @@ function DashboardSidebar() {
           <ul className="flex flex-col pl-0 mb-0 list-none">
             <li className="mt-1 w-full">{sidebarLinks}</li>
           </ul>
-          <div className="mt-[20rem]">
+          <div className="mt-[24rem]">
             <LowerSidebarlinkComponent />
           </div>
         </div>
@@ -74,6 +81,13 @@ function DashboardSidebar() {
           </div>
         </div>
       </aside>
+      {isOpen && window.innerWidth < sizes.laptopL && (
+        <div
+          className="fixed inset-0 bg-black/50"
+          style={{ zIndex: 99 }}
+          onClick={closeSidebar}
+        />
+      )}
     </>
   );
 }
@@ -102,12 +116,9 @@ const SidebarLinkComponent = ({
 
 const LowerSidebarlinkComponent = () => {
   const { toggleModal } = useContext(authContext);
-  const test = () => {
-    console.log("i am button");
-  };
   return (
     <div className="">
-      <SidebarLink to="/dashboard/setting">
+      <SidebarLink to="setting">
         <i
           className={`${styles.icon} stroke-none shadow-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center fill-current p-2.5 text-center text-black`}
         >
@@ -117,14 +128,14 @@ const LowerSidebarlinkComponent = () => {
           My Profile
         </span>
       </SidebarLink>
-      <SidebarLink to="/dashboard/logout">
+      <SidebarLink to="logout">
         <i
           className={`${styles.icon} stroke-none shadow-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center fill-current p-2.5 text-center text-black`}
         >
           <FiLogOut />
         </i>
-        <button onClick={toggleModal}
-         
+        <button
+          onClick={toggleModal}
           className="ml-1 duration-300 opacity-100  ease text-slate-700"
         >
           Logout
@@ -141,22 +152,22 @@ const SidebarLinkData = [
     text: "Dashboard",
   },
   {
-    path: "/dashboard/orders",
+    path: "orders",
     icon: <LuPackage2 className="w-6 h-6" />,
     text: "Orders",
   },
   {
-    path: "/dashboard/review",
+    path: "review",
     icon: <MdOutlineReviews className="w-6 h-6" />,
     text: "Review",
   },
+  // {
+  //   path: "offers",
+  //   icon: <BiSolidOffer className="w-6 h-6" />,
+  //   text: "Offers",
+  // },
   {
-    path: "/dashboard/offers",
-    icon: <BiSolidOffer className="w-6 h-6" />,
-    text: "Offers",
-  },
-  {
-    path: "/dashboard/request",
+    path: "request",
     icon: <ImTruck className="w-6 h-6" />,
     text: "Request Pickup",
   },

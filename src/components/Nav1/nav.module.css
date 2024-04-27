@@ -93,3 +93,39 @@
 .home{
     color: #133B10;
 }
+
+@media only screen and (max-width:1024px){
+    .icon span{
+         margin-right:0.01rem;}
+    .icon2 span{
+         margin-right:0.7rem;
+         width:12px;
+         height:14.2px;}
+
+    
+       
+ 
+
+    
+}
+
+@media only screen and (max-width:750px){
+    .icon span{
+         margin-right:0.1rem;
+        }
+
+        
+}
+
+@media only screen and (max-width:420px){
+    .container{
+        display: none;
+    }
+   .navLinks{
+    display:none;
+   }
+   .navWrapper{
+    padding: 0px 20px;
+    height: 65px;
+   }
+}

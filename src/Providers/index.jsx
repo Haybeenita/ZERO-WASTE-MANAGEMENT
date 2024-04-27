@@ -8,6 +8,8 @@ const AuthProvider = ({children}) => {
   const [bookingDetails, setBookingDetails] = useState([]);
   const [loading, setLoading] = useState(true);
   const [bookingform, setBookingForm] = useState({});
+  const [processingBooking, setProcessingBooking] = useState({});
+  const [updateStatus,setUpdateStatus] = useState({})
 
   const [showModal, setShowModal] = useState(false);
 
@@ -27,6 +29,11 @@ const AuthProvider = ({children}) => {
     setBookingForm,
     showModal,
     toggleModal,
+    processingBooking,
+    setProcessingBooking,
+    updateStatus,
+    setUpdateStatus,
+  
   
     setShowModal
   };

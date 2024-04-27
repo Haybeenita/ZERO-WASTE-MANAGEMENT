@@ -50,3 +50,14 @@ input::placeholder{
         font-size: 14px;
     }
 }
+@media only screen and (max-width:420px){
+    input[data-size='small']{
+        width:15px;
+        height:46.22px;
+        font-size:10px;
+        color:#e5f6e2;
+        background-color:transparent;
+        border:2px solid #fff;
+        padding: 15px 35px !important;
+    }
+}

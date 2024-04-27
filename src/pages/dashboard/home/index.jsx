@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 function DashboardHome() {
   return (
     <div className="w-full p-6 mx-auto">
-      <div className="flex flex-row items-center -mx-3 mt-2">
-        <div className=" px-3  lg:flex-0 shrink-0">
-          <div className="flex flex-wrap ml-[1rem] lg:ml-[4rem] gap-10 ">
+      <div className="flex lg:flex-row flex-col lg:items-center -mx-3 mt-2">
+        <div className=" px-3 lg:flex-0 shrink-0">
+          <div className="flex lg:flex-row flex-col flex-wrap lg:ml-[4rem] gap-10 ">
             <div className="card w-full max-w-[15rem] h-[12rem] lg:h-[15rem] px-4 sm:flex-0 shrink-0 sm:w-33% bg-white shadow-lg">
               <div className="flex flex-col">
                 <h3 className="lg:text-2xl text-lg font-semibold text-[#212122] my-[1rem]">
@@ -39,7 +39,7 @@ function DashboardHome() {
           </div>
         </div>
 
-        <div className="flex lg:mt-0 mt-[1rem] lg:w-[30rem] w-[20rem] lg:p-3 p-2 lg:h-[15rem] h-[13rem] border-2 bg-gradient-to-r from-zero-400 via-zero-600 to-zero-800 rounded-xl flex-col ml-[1rem] lg:ml-[2rem]">
+        <div className="flex lg:mt-0 mt-[1rem] lg:w-[30rem] w-[20rem] lg:p-3 p-2 lg:h-[15rem] h-[13rem] border-2 bg-gradient-to-r from-zero-400 via-zero-600 to-zero-800 rounded-xl flex-col ml-[0.5rem] lg:ml-[2rem]">
           <h3 className="text-white font-bold lg:text-xl text-lg mt-[1rem] ml-[1rem]">
             Request Pickup
           </h3>

@@ -13,6 +13,7 @@ import { authContext } from "../../../Providers/index.jsx";
 const Register = () => {
   const { authUser, setAuthUser } = useContext(authContext);
   const [loading, setLoading] = useState(false);
+  const [showResponse, setShowResponse] = useState(false);
   const navigate = useNavigate();
   const [user, setUser] = useState({});
   const [formFilled, setFormFilled] = useState({
@@ -65,13 +66,19 @@ const Register = () => {
         console.log(authUser, "from register");
         setLoading(false);
         // notifySucces()
-        navigate("/login");
+        navigate('/verify');
       })
       .catch(function (error) {
-        setUser(error.data);
+        setUser(error.response);
         console.log(error, "error from db");
         setLoading(false);
         // errorToast()
+      })
+      .finally(function () {
+        setShowResponse(true);
+        setTimeout(() => {
+          setShowResponse(false);
+        }, 7000);
       });
   };
   const handleInputChange = (e) => {
@@ -86,8 +93,8 @@ const Register = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0 bg-black/40"></div>
 
-      <div className="absolute inset-0 flex justify-center items-center z-10">
-        <div className="md:w-[30rem] md:h-[45rem] w-[22rem] h-[39rem] flex items-center justify-center pt-[2.5rem] md:mt-[0.75rem] shadow-2xl md:bg-white/35 bg-white/40 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-lg">
+      <div className="absolute inset-0 flex justify-center mx-auto items-center z-10">
+        <div className="md:w-[30rem] md:h-[46rem] w-[23rem] h-[41rem] flex items-center justify-center pt-[2.5rem] md:mt-[0.75rem] shadow-2xl md:bg-white/35 bg-white/40 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-lg">
           <div className="justify-center shadow-2xl md:w-[30rem] md:h-[45rem] w-[25rem] h-[39rem] ">
             <h1 className="flex items-center justify-center font-bold md:text-3xl text-2xl text-black mb-2">
               Register
@@ -100,19 +107,20 @@ const Register = () => {
               </span>
               to access features
             </p>
-            <div className="flex relative flex-col w-[18rem] md:w-[22rem] ml-[1.8rem] md:ml-[4rem] md:mt-[2rem] mt-[0.5rem]">
+            <div className="flex relative flex-col w-[18rem] md:w-[22rem] ml-[1.8rem] md:ml-[4rem] md:mt-[1rem] mt-[0.5rem]">
               <form onSubmit={signUp}>
                 <p className="text-black font-normal md:font-medium">
                   Firstname:
                 </p>
 
-                <Input
+                <Input 
                   variant="primary"
                   padding="8px"
                   placeholder="name"
                   onChange={handleInputChange}
                   name="first_name"
                   value={formFilled.first_name}
+                  required
                 />
 
                 <p className="text-black font-normal md:font-medium">
@@ -126,29 +134,32 @@ const Register = () => {
                   onChange={handleInputChange}
                   name="last_name"
                   value={formFilled.last_name}
+                  required
                 />
 
                 <p className="text-black font-normal md:font-medium">Email:</p>
-                <Input
+                <Input 
                   variant="primary"
                   md:padding="8px"
                   padding="6px"
                   placeholder="@"
                   onChange={handleInputChange}
-                  name="email"
+                  name="email" 
                   value={formFilled.email}
+                  required
                 />
 
                 <p className="text-black font-normal md:font-medium">
                   Phone Number:
                 </p>
-                <Input
+                <Input 
                   variant="primary"
                   padding="8px"
                   placeholder="+234"
                   onChange={handleInputChange}
                   name="phonenumber"
                   value={formFilled.phonenumber}
+                  required
                 />
 
                 <p className="text-black font-normal md:font-medium">
@@ -162,7 +173,21 @@ const Register = () => {
                   onChange={handleInputChange}
                   name="password"
                   value={formFilled.password}
+                  required
                 />
+                {showResponse && (
+                  <div>
+                    {user?.status === 201 ? (
+                      <p className="pt-1 text-green-200">
+                        {user?.data?.message}
+                      </p>
+                    ) : (
+                      <p className="text-red-800 text-center pt-1">
+                        {user?.data.detail[0].msg}
+                      </p>
+                    )}
+                  </div>
+                )}
                 <div className="flex justify-center md:mt-2 mt-2">
                   <Button
                     variant="primary"
@@ -200,13 +225,14 @@ const Register = () => {
                       /> */}
                 </div>
                 <div className="">
-                  <p className="mt-2 text-[#212122] font-medium text-md md:ml-[3.5rem] ml-[1.5rem] ">
+                  <p className="mt-2 text-[#212122] font-medium text-md md:ml-[2.2rem] ml-[0.5rem] ">
                     Already have an Account?{" "}
                     <span className="text-[#0E5808] underline cursor-pointer">
                       <Link to="/login">Sign in</Link>
                     </span>
                   </p>
                 </div>
+                
               </form>
             </div>
           </div>

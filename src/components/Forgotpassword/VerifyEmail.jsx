@@ -12,7 +12,7 @@ export const ForgotPasswordReset = () => {
     const closeReset = (e) => {
         
         e.preventDefault();
-        axios.post(`${ForgotPassword}/${email}`, {
+        axios.post(`https://api.zerowastebin.com.ng/api/v1/forgotpassword/password-recovery/${email}`, {
         }, {
             headers: {
                 accept: 'application/json',

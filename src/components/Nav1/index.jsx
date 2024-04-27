@@ -53,9 +53,9 @@ export const NavBar = () => {
   return (
     <div className={styles.navWrapper}>
       <div className={styles.logo}>
-        <div className="flex">
-        <img src="/zerowastelogo2.svg" alt="" className="relative"/>
-        <p className="absolute mt-[2.3rem] ml-[5rem] text-[#145D0D] font-semibold text-lg flex gap-1 items-center">ZERO <span className="text-[#51AD44]">WASTE</span></p>
+        <div className="flex items-center">
+        <img src="/zerowastelogo2.svg" alt="" className="relative sm:w-22 sm:h-20 lg:w-24 lg:h-20 w-16 h-16"/>
+        <p className="absolute ml-[3.2rem] md:ml-[5rem] text-[#145D0D] font-semibold text-sm md:text-lg flex gap-1 items-center">ZERO <span className="text-[#51AD44]">WASTE</span></p>
         </div>
 
       </div>

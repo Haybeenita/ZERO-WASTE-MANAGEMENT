@@ -7,7 +7,7 @@ import { authContext  } from "../../../Providers";
 
 const Order = () => {
   const [checkedIds,setCheckedIds] = useState(localStorage.getItem("pickup")??[])
-  const handleCheck = (id,value) => {
+  const handleCheck = (id) => {
     if(!checkedIds.includes(id)){
       setCheckedIds([...checkedIds, id]); 
     }
@@ -21,7 +21,7 @@ useEffect (()=>{
   
 const {bookingDetails,setBookingDetails} = useContext(authContext )
 const token = localStorage.getItem('token')
-const status='succesfull'
+// const status='succesfull'
   useEffect(()=>{
     if(token){
         axios.get(`${Bookingsorder}`,{
@@ -67,8 +67,8 @@ const status='succesfull'
           history
         </h3>
         <div className="overflow-x-auto lg:mr-[2rem] mr-[1rem]">
-          <table className="table lg:table-md table-sm text-[#212122] font-medium">
-            <thead className="text-[#212122] font-semibold capitalize text-lg">
+          <table className="table lg:table-md table-xs text-[#212122] font-medium">
+            <thead className="text-[#212122] font-semibold capitalize lg:text-lg text-sm">
               <tr>
                 <th>s/n</th>
                 <th>Address</th>
@@ -84,11 +84,11 @@ const status='succesfull'
                 <th>{index + 1}</th>
                 <td>{book.address}</td>
                 <td>{book.pickup_date}</td>
-                <td> {status}</td>
+                <td> {book.order_status}</td>
                 {
-                  status==='succesfull'? <td ><input 
+                  book.order_status==='COMPLETED'? <td ><input 
                   
-                  onChange={(e) => handleCheck(index,e.target.value)} checked={isChecked(index)} disabled={isChecked(index)} className="bg-red-500" type='checkbox' style={{color: 'red'}}/></td>: ''
+                  onChange={(e) => handleCheck(index,e.target.value)} checked={isChecked(index)} disabled={isChecked(index)} className="bg-red-500 mx-[2rem]" type='checkbox' style={{color: 'red'}}/></td>: ''
                 }
                 
               </tr>

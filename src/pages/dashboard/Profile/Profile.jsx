@@ -5,7 +5,7 @@ function Profile() {
   const {authUser,bookingDetails} = useContext(authContext)
   console.log(bookingDetails,'from profile')
   return (
-    <div className="w-full p-6 mx-auto">
+    <div className="w-full lg:p-6 p-10 mx-auto">
       <div className="flex flex-wrap -mx-3">
         <div className="w-full max-w-full px-3 lg:flex-0 shrink-0">
           <div className="flex flex-wrap -mx-3 gap-6">
@@ -33,7 +33,7 @@ function Profile() {
               </div>
             </div>
             <div className="card w-full max-w-full px-3 sm:flex-0 shrink-0 sm:w-4/12 bg-white shadow-lg p-4 sm:p-8">
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center justify-between mb-4 p-4 lg:p-0">
                 <h5 className="text-xl font-bold leading-none text-gray-900 ">
                   Address Book
                 </h5>
@@ -56,7 +56,7 @@ function Profile() {
                           Default Address:
                         </h3>
                         <p className="text-sm font-medium text-gray-900 truncate  mt-[1rem]">
-                         {bookingDetails[0].address}
+                         {bookingDetails[0]?.address}
                         </p>
                         <a
                           href="#"
