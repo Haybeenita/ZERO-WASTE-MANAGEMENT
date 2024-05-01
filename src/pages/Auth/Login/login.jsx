@@ -71,7 +71,7 @@ const Login = () => {
 
   return (
     <>
-      <div className="relative h-screen bg-cover bg-center filter bg-[url('../../../src/assets/images/animation1.jpg')]">
+      <div className="relative h-screen bg-cover bg-center filter bg-[url('/animation1.jpg')]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 bg-black/40"></div>
         {/* Login Form */}

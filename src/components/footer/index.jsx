@@ -5,7 +5,7 @@ const Footer =()=>{
     return <div>
                 <div className={styles.footerNav}>
                     <div className={styles.signup}>
-                        <img className={styles.msg} src='src\assets\images\Vector (1).png' />
+                        <img className={styles.msg} src='/Vector (1).png' />
                         <p>Sign Up For Industry Alerts, Deals,<span>News And Insights From Us.</span></p>
                     </div>
                     <div className={styles.btns}>
@@ -20,8 +20,8 @@ const Footer =()=>{
                             <div className={styles.aboutUs}>
                                 <img src="/zerowastelogo2.svg" alt="" className="w-16 h-16" />
                                 <h6 className={styles.title2}>zero waste</h6>
-                                <p className={styles.contactUs}> <span><img className={styles.msg2} src='src\assets\images\Vector (2).png' /></span>zerowaste@gmail.com</p>
-                                <p className={styles.contactUs}> <span><img className={styles.msg2} src='src\assets\images\Vector (3).png' /></span>234816545620</p>
+                                <p className={styles.contactUs}> <span><img className={styles.msg2} src='/Vector (2).png' /></span>zerowaste@gmail.com</p>
+                                <p className={styles.contactUs}> <span><img className={styles.msg2} src='/Vector (3).png' /></span>234816545620</p>
                             </div>
                             <div className={styles.company}>
                                 <h6 className={styles.title}>Quick Links</h6>

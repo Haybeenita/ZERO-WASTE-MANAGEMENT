@@ -12,6 +12,7 @@ const AuthProvider = ({children}) => {
   const [updateStatus,setUpdateStatus] = useState({})
 
   const [showModal, setShowModal] = useState(false);
+  const [userProfileImage,setuserProfileImage]=useState({})
 
   const toggleModal = () => {
     setShowModal(true);
@@ -33,9 +34,9 @@ const AuthProvider = ({children}) => {
     setProcessingBooking,
     updateStatus,
     setUpdateStatus,
-  
-  
-    setShowModal
+    setShowModal,
+    userProfileImage,
+    setuserProfileImage
   };
   return <authContext.Provider value={shared}>{children}</authContext.Provider>;
 };

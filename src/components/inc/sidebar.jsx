@@ -25,7 +25,7 @@ function DashboardSidebar({ isOpen = true, closeSidebar = () => {} }) {
           "fixed left-100% top-0 bottom-0 inset-y-0 md-left-0 flex-wrap items-center",
           "justify-between block w-full overflow-y-auto transition-all duration-200 -translate-x-full bg-white z-100",
           "shadow-xl border-0 xl:ml-4 ease-in-out z-990 max-w-64 rounded-2xl xl:translate-x-0 xl:bg-transparent",
-          window.innerWidth < sizes.laptopL ? sidebarclass:""
+          window.innerWidth < sizes.laptop ? sidebarclass:""
         )}
         id="sidenav-main"
         style={{ zIndex:999999}}
@@ -64,7 +64,7 @@ function DashboardSidebar({ isOpen = true, closeSidebar = () => {} }) {
           <ul className="flex flex-col pl-0 mb-0 list-none">
             <li className="mt-1 w-full">{sidebarLinks}</li>
           </ul>
-          <div className="mt-[24rem]">
+          <div className="mt-[19.5rem]">
             <LowerSidebarlinkComponent />
           </div>
         </div>
@@ -81,7 +81,7 @@ function DashboardSidebar({ isOpen = true, closeSidebar = () => {} }) {
           </div>
         </div>
       </aside>
-      {isOpen && window.innerWidth < sizes.laptopL && (
+      {isOpen && window.innerWidth < sizes.laptop && (
         <div
           className="fixed inset-0 bg-black/50"
           style={{ zIndex: 99 }}

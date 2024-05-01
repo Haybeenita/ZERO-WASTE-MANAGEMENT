@@ -67,13 +67,13 @@ const Home = () => {
           aos-duration="2000"
         >
           <img
-            src="src\assets\images\Rectangle 6.png"
+            src="/Rectangle 6.png"
             alt=""
             className={styles.review1}
           />
           <img
             className={styles.review}
-            src="src\assets\images\Frame 23.png"
+            src="/Frame 23.png"
             alt=""
             srcset=""
           />
@@ -106,7 +106,7 @@ const Home = () => {
           >
             <div className={styles.blockText}>
               <img
-                src="src\assets\images\fa6-solid_trash-can.png"
+                src="/fa6-solid_trash-can.png"
                 alt=""
                 srcset=""
               />
@@ -118,7 +118,7 @@ const Home = () => {
               </p>
             </div>
             <div className={styles.blockImg}>
-              <img src="src\assets\images\Rectangle 14.png" alt="" srcset="" />
+              <img src="/Rectangle 14.png" alt="" srcset="" />
             </div>
           </div>
           <div
@@ -128,7 +128,7 @@ const Home = () => {
             aos-duration="15000"
           >
             <div className={styles.blockText}>
-              <img src="src\assets\images\Vector (9).png" alt="" srcset="" />
+              <img src="/Vector (9).png" alt="" srcset="" />
               <h6>Commercial Waste And Industrial Services</h6>
               <p>
                 We offer commercial customers reliable and regular collection of
@@ -138,7 +138,7 @@ const Home = () => {
               </p>
             </div>
             <div className={styles.blockImg}>
-              <img src="src\assets\images\Rectangle 15.png" alt="" srcset="" />
+              <img src="/Rectangle 15.png" alt="" srcset="" />
             </div>
           </div>
           <div
@@ -148,7 +148,7 @@ const Home = () => {
             aos-duration="1000"
           >
             <div className={styles.blockText}>
-              <img src="src\assets\images\Vector (10).png" alt="" srcset="" />
+              <img src="/Vector (10).png" alt="" srcset="" />
               <h6>Retail And Institutional Collection Service</h6>
               <p>
                 Our experts are highly knowledgeable and will help you ensure
@@ -157,7 +157,7 @@ const Home = () => {
               </p>
             </div>
             <div className={styles.blockImg}>
-              <img src="src\assets\images\Rectangle 16.png" alt="" srcset="" />
+              <img src="/Rectangle 16.png" alt="" srcset="" />
             </div>
           </div>
         </div>

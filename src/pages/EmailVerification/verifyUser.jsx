@@ -55,6 +55,7 @@ const VerifyUserEmail = () => {
       console.error("Token not found in URL");
       setVerificationStatus("error");
       setIsLoading(false);
+      navigate("/Register")
     }
   }, []);
 

@@ -111,9 +111,9 @@
         margin-top: 66px;
     }
     .footerNav{
-        width:370.35px;
+        width:320px;
         flex-direction: column;
-        margin: 0 20px ;
+        margin: 0 20px 0 10px ;
         padding:10px 14px 10px 18px ;
         align-items: start;
 

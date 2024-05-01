@@ -42,11 +42,8 @@ const PaystackIntegration = () => {
         })
         .catch(function (error) {
           console.log(error,'error response');
-          navigate('/orders', { replace: true });
+          navigate('dashboard/orders', { replace: true });
         });
-
-        
-        alert(message);
         navigate('dashboard/orders', { replace: true });
         alert("success");
 
@@ -55,7 +52,7 @@ const PaystackIntegration = () => {
         setLastName("");
         // setAmount("");
       },
-      oncancel() {
+      onCancel() {
         alert("You have cancelled the transaction");
         navigate('/dashboard/orders', { replace: true });
       },

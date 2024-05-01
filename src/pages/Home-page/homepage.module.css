@@ -194,6 +194,7 @@
   .heroBg h1 {
     font-size: 20px;
     padding-top: 10rem;
+  
   }
   .heroBg p {
     padding-bottom: 15px;
@@ -202,27 +203,28 @@
 .heroBg {
   position: relative;
   height: 560px;
-  padding-left: 38px;
+  padding-left: 35px;
   
 }
 .wasteMgt {
   flex-direction: column; 
 }
 .wasteMgtText {
-  width: 400px;
+  width: 100%;
   padding: 20px;
 }
 .heading {
-  font-size: 20px;
+  font-size: 17px;
+  text-align: center;
   padding-bottom: 14px;
 }
 .lead {
-  font-size: 34px;
+  font-size: 30px;
   line-height: normal;
   padding-bottom: 12px;
 }
 .aboutWaste {
-  font-size: 15px;
+  font-size: 14px;
   padding-bottom: 20px;
 }
 .mgtImage {
@@ -245,17 +247,20 @@
 .solutions {
   height: auto;
   
-  padding: 68px 10px 0 10px;
+  padding: 68px 0px 0 0px;
   /* border:1px solid red; */
 }
 .solutions h3 {
-  font-size: 26px;
-  padding-bottom: 55px;
+  font-size: 24px;
+  padding:0 10px 55px 10px;
 }
 
 .services {
   flex-direction: column;
- margin: 0px 40px;
+  align-items: center;
+  justify-content: center;
+ /* margin: 0px 40px; */
+ width:100%;
 
 
 }

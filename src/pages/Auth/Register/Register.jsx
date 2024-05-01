@@ -66,7 +66,8 @@ const Register = () => {
         console.log(authUser, "from register");
         setLoading(false);
         // notifySucces()
-        navigate('/verify');
+        // navigate('/verify');
+        navigate('/login')
       })
       .catch(function (error) {
         setUser(error.response);
@@ -89,7 +90,7 @@ const Register = () => {
   };
 
   return (
-    <div className="relative h-screen bg-cover bg-center filter bg-[url('../../../src/assets/images/animation1.jpg')]">
+    <div className="relative h-screen bg-cover bg-center filter bg-[url('/animation1.jpg')]">
       {/* Background Image */}
       <div className="absolute inset-0 z-0 bg-black/40"></div>
 

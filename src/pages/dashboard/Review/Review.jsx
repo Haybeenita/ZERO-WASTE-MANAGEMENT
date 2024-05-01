@@ -21,9 +21,9 @@ export const Review = () => {
     console.log(token)
     e.preventDefault();
     axios
-      .post(`${PostReviews}?comment=${review}&reviewer_name=${authUser?.display_name}`,{
+      .post(`${PostReviews}?comment=${review}&reviewer_name=${authUser?.first_name}`,{
         comment: review,
-        reviewer_name: authUser?.display_name,
+        reviewer_name: authUser?.first_name,
       },{headers:{
         accept:'application/json',
         Authorization: `Bearer ${token}`,
@@ -31,6 +31,7 @@ export const Review = () => {
       },})
       .then(function (response) {
         console.log(response, "response from db");
+
         // console.log(reviews,'current review')
         setReview('')
       })
@@ -76,7 +77,7 @@ console.log(reviews,'all reviews by user')
         </h1>
         <p className="text-lg text-[#212122] font-bold mt-[1rem] ml-[2rem]">
           <span className="text-zero-400">
-            Hello {authUser?.display_name}, 
+            Hello {authUser?.first_name}, 
           </span>
             you can Leave your reviews here 👇🏽
         </p>
@@ -91,8 +92,8 @@ console.log(reviews,'all reviews by user')
           ></textarea>
           <div  className="flex flex-col ml-[6rem]">
               {
-                reviews.map((review)=>{
-                  return <div className="bg-zero-50 shadow-xl mt-[2rem] ">
+                reviews.map((review,index)=>{
+                  return <div key={index} className="bg-zero-50 shadow-xl mt-[2rem] ">
                     <p className="font-medium text-zero-400">{review.reviewer_name}</p>
                     <p  className="font-medium">Review: {review.comment}</p>
                   </div>
