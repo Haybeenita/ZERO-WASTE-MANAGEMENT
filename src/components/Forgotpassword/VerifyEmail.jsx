@@ -33,14 +33,14 @@ export const ForgotPasswordReset = () => {
 
     return (
         <div className="w-full h-screen bg-white flex items-center justify-center m-auto">
-        <div className="w-[30rem] h-[20rem] border-2 border-zero-500 bg-zero-300 rounded-xl pt-[1.5rem]">
+        <div className="w-[15rem] h-[auto] md:w-[30rem] md:h-[20rem] lg:w-[30rem] lg:h-[20rem] border-2 border-zero-500 bg-zero-300 rounded-xl pt-[1.5rem]">
             {showReset && (
-                <div className="w-[25rem] h-[15rem] flex justify-center mx-auto flex-col">
+                <div className=" px-[2rem] flex justify-center mx-auto flex-col">
                      <span className="capitalize font-normal text-[#212122] text-lg mt-[2rem]">Enter your email</span>
                     <div className="mt-[2rem] flex flex-col"> 
                         <Input size="small" variant="primary" placeholder="Email" onChange={(e)=>setEmail(e.target.value)}/>
                         <p className="text-[#212122] mt-[0.5rem]">{response}</p>
-                        <button className="bg-[#51AD44] text-white flex items-center justify-center w-[8rem] h-[3rem] rounded-xl ml-[8rem] mt-[3rem]" onClick={closeReset}>Send</button>
+                        <button className="bg-[#51AD44] text-white flex items-center justify-center w-[8rem] h-[3rem] rounded-xl lg:ml-[8rem]  md:ml-[8rem] my-[2rem]" onClick={closeReset}>Send</button>
                     </div>
                     {response.status=== 200?<p>{response}</p> :''}
                 </div>

@@ -298,3 +298,11 @@
 }
 
 }
+@media only screen and (max-width:340px){
+  .btns {
+   flex-direction: column;
+  }
+  .btns > * + * {
+    margin-left: 0px;
+  }
+}
