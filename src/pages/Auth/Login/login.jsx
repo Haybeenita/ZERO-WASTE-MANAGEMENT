@@ -93,7 +93,7 @@ const Login = () => {
                     placeholder="Email"
                     onChange={handleInputChange}
                     name="email"
-                    value={formFilled.email}
+                    value={formFilled.email} required 
                   />
                   <Input
                     variant="primary"
@@ -103,7 +103,7 @@ const Login = () => {
                     onChange={handleInputChange}
                     name="password"
                     value={formFilled.password}
-                    type="password"
+                    type="password" required
                   />
                 </div>
                 <p className="hover:text-blue-700 underline hover:underline-offset-4 md:ml-[10rem] ml-[8rem] text-[#212122] md:font-medium font-normal mt-[0.5rem] ">
