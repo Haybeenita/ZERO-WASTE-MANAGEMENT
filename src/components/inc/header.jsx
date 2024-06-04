@@ -6,7 +6,7 @@ const DashboardHeader = ({title = "", handleToggle = () => {} }) => {
   const {authUser,userProfileImage} = useContext(authContext)
   const defaultImg= 'https://img.freepik.com/free-psd/3d-illustration-with-online-avatar_23-2151303093.jpg?w=740&t=st=1714383402~exp=1714384002~hmac=a7006916eebb9e0d64a21d87218a9a225e0ed5879ef11d25468f8fab66f1de82'
   return (
-    <nav className="flex flex-wrap items-center px-0 transition-all shadow-md 0px 3px 8px; duration-250 ease-soft-in lg:flex-nowrap lg:justify-start sticky top-0 z-50">
+    <nav className="flex flex-wrap items-center px-0 transition-all shadow-md 0px 3px 8px; duration-250 ease-soft-in lg:flex-nowrap lg:justify-start sticky top-0 z-[99999999999999]">
       <div className="flex items-center justify-between w-full px-4 py-1 mx-auto flex-wrap-inherit">
         <nav>
           <ol className="flex flex-wrap xl:pt-1 pt-10  mr-12 bg-transparent rounded-lg sm:mr-16">

@@ -67,7 +67,7 @@ const token = localStorage.getItem('token')
           history
         </h3>
         <div className="overflow-x-auto lg:mr-[2rem] mr-[1rem]">
-          <table className="table lg:table-md table-xs text-[#212122] font-medium">
+        <table className="table lg:table-md table-xs text-[#212122] font-medium">
             <thead className="text-[#212122] font-semibold capitalize lg:text-lg text-sm">
               <tr>
                 <th>s/n</th>
@@ -87,7 +87,7 @@ const token = localStorage.getItem('token')
                 <td> {book.order_status}</td>
                 {
                   book.order_status==='COMPLETED'? <td ><input 
-                  
+
                   onChange={(e) => handleCheck(index,e.target.value)} checked={isChecked(index)} disabled={isChecked(index)} className="bg-red-500 mx-[2rem]" type='checkbox' style={{color: 'red'}}/></td>: ''
                 }
                 

@@ -24,9 +24,9 @@ const PaystackIntegration = () => {
 
     const payStack = new PaystackPop();
 
-
+    //old key:pk_test_907eb64312b409f14c9d14559c314ff3aaf6554e
     payStack.newTransaction({
-      key: "pk_test_907eb64312b409f14c9d14559c314ff3aaf6554e",
+      key: "pk_live_93da2e5f3cc2c7afa7da15c6056f3742151bafcf",
       amount: getPrice(bookingform) * 100,
       ref:processingBooking.id.toString(),
       email,

@@ -157,7 +157,7 @@ const BookingPage = () => {
               value={bookingform.waste_type}
               name="waste_type"
             >
-              <option disabled value="" className="font-semibold text-md">
+              <option  value="" className="font-semibold text-md">
                 Type of Waste
               </option>
               <option value="Organic">Organic</option>
